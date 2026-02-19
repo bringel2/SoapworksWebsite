@@ -1,12 +1,530 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>My GitHub Pages Site</title>
-  </head>
-  <body>
-    <h1>It works.</h1>
-    <p>Deployed with GitHub Pages.</p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Atlas — Fancy GitHub Pages Demo</title>
+  <meta name="description" content="A beefy, fancy static website demo for GitHub Pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Background ornaments -->
+  <div class="bg">
+    <div class="blob b1" aria-hidden="true"></div>
+    <div class="blob b2" aria-hidden="true"></div>
+    <div class="blob b3" aria-hidden="true"></div>
+    <div class="grid" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+  </div>
+
+  <!-- Top nav -->
+  <header class="topbar" id="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Atlas home">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Atlas</span>
+      </a>
+
+      <nav class="links" aria-label="primary">
+        <a href="#features">Features</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="pill">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <button class="iconbtn" id="cmdkBtn" title="Search (Ctrl/⌘ K)" aria-label="Open search">
+          <span class="kbd">⌘K</span>
+        </button>
+        <button class="iconbtn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+          <span id="themeIcon" aria-hidden="true">◐</span>
+        </button>
+        <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="container mobileInner">
+        <a href="#features">Features</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="pill">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top">
+    <section class="hero container">
+      <div class="heroLeft">
+        <div class="badge reveal">
+          <span class="dot"></span>
+          Static site. Fancy vibes. Zero backend.
+        </div>
+
+        <h1 class="reveal">
+          A <span class="grad">ridiculously polished</span> GitHub Pages site<br />
+          in pure HTML/CSS/JS.
+        </h1>
+
+        <p class="lead reveal">
+          This is a “show-me-what-you-can-do” template: animated hero, scroll reveals, modal search,
+          dark mode, card interactions, and a clean responsive layout — all without frameworks.
+        </p>
+
+        <div class="cta reveal">
+          <a class="btn primary" href="#work">See the work</a>
+          <button class="btn ghost" id="copyBtn">
+            Copy deploy URL
+            <span class="hint" id="copyHint" aria-live="polite"></span>
+          </button>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat">
+            <div class="statN">95</div>
+            <div class="statL">Lighthouse-ish vibes</div>
+          </div>
+          <div class="stat">
+            <div class="statN">0</div>
+            <div class="statL">build steps</div>
+          </div>
+          <div class="stat">
+            <div class="statN">∞</div>
+            <div class="statL">customizable</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="heroRight reveal">
+        <div class="panel">
+          <div class="panelTop">
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="panelTitle">live-preview.json</div>
+          </div>
+          <pre class="code" aria-label="Demo code panel"><code>{
+  "site": "Atlas",
+  "stack": ["HTML", "CSS", "JS"],
+  "features": [
+    "scroll-reveal",
+    "cmd-k search",
+    "dark mode",
+    "tilt cards",
+    "active nav"
+  ],
+  "deploy": "GitHub Pages"
+}</code></pre>
+
+          <div class="sparkline" aria-hidden="true">
+            <span style="height:32%"></span>
+            <span style="height:58%"></span>
+            <span style="height:41%"></span>
+            <span style="height:76%"></span>
+            <span style="height:54%"></span>
+            <span style="height:86%"></span>
+            <span style="height:63%"></span>
+            <span style="height:92%"></span>
+            <span style="height:69%"></span>
+            <span style="height:98%"></span>
+            <span style="height:73%"></span>
+            <span style="height:88%"></span>
+          </div>
+
+          <div class="panelBottom">
+            <div class="chip">Accessible</div>
+            <div class="chip">Responsive</div>
+            <div class="chip">Fast</div>
+            <div class="chip">No framework</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos / marquee -->
+    <section class="marqueeWrap">
+      <div class="marquee" aria-label="Scrolling marquee">
+        <div class="marqueeTrack">
+          <span>Scroll reveal</span><span>Magnetic buttons</span><span>Glass UI</span><span>Hero gradients</span>
+          <span>Cmd-K search</span><span>Dark mode</span><span>Tilt cards</span><span>Sticky nav</span>
+          <span>Scroll reveal</span><span>Magnetic buttons</span><span>Glass UI</span><span>Hero gradients</span>
+          <span>Cmd-K search</span><span>Dark mode</span><span>Tilt cards</span><span>Sticky nav</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section container" id="features">
+      <div class="sectionHead reveal">
+        <h2>Features that feel expensive</h2>
+        <p>These are the bits that make a static site feel like a product.</p>
+      </div>
+
+      <div class="cards3">
+        <article class="card reveal tilt">
+          <div class="cardIcon">✦</div>
+          <h3>Scroll-reveal</h3>
+          <p>Elements animate in as you scroll, with reduced-motion support built in.</p>
+          <ul>
+            <li>IntersectionObserver</li>
+            <li>Staggered delays</li>
+            <li>Accessible defaults</li>
+          </ul>
+        </article>
+
+        <article class="card reveal tilt">
+          <div class="cardIcon">⌘</div>
+          <h3>Cmd-K Search</h3>
+          <p>Hit Ctrl/⌘ K to search sections and jump instantly.</p>
+          <ul>
+            <li>Keyboard-first</li>
+            <li>Fuzzy matching</li>
+            <li>Esc to close</li>
+          </ul>
+        </article>
+
+        <article class="card reveal tilt">
+          <div class="cardIcon">◐</div>
+          <h3>Dark Mode</h3>
+          <p>System preference aware, stored locally, toggles instantly.</p>
+          <ul>
+            <li>localStorage</li>
+            <li>Color-scheme hints</li>
+            <li>No flash</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="split reveal">
+        <div class="splitLeft">
+          <h3>Built like a landing page, wired like an app.</h3>
+          <p>
+            This template keeps things clean: semantic HTML, CSS tokens, tiny JS utilities.
+            No bundlers, no dependencies, still “premium.”
+          </p>
+          <div class="chips">
+            <span class="chip">Semantic sections</span>
+            <span class="chip">Active nav</span>
+            <span class="chip">Smooth anchors</span>
+            <span class="chip">Mobile menu</span>
+            <span class="chip">Microinteractions</span>
+            <span class="chip">Reduced motion</span>
+          </div>
+        </div>
+
+        <div class="splitRight">
+          <div class="miniGrid">
+            <div class="mini reveal">
+              <div class="miniTop">
+                <span class="miniK">Performance</span>
+                <span class="miniV">Fast</span>
+              </div>
+              <div class="bar" style="--p: 88%"></div>
+            </div>
+            <div class="mini reveal">
+              <div class="miniTop">
+                <span class="miniK">Accessibility</span>
+                <span class="miniV">Solid</span>
+              </div>
+              <div class="bar" style="--p: 92%"></div>
+            </div>
+            <div class="mini reveal">
+              <div class="miniTop">
+                <span class="miniK">SEO</span>
+                <span class="miniV">Ready</span>
+              </div>
+              <div class="bar" style="--p: 84%"></div>
+            </div>
+            <div class="mini reveal">
+              <div class="miniTop">
+                <span class="miniK">Style</span>
+                <span class="miniV">Extra</span>
+              </div>
+              <div class="bar" style="--p: 97%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work / Projects -->
+    <section class="section container" id="work">
+      <div class="sectionHead reveal">
+        <h2>Work</h2>
+        <p>Hover cards, subtle tilt, and a “shine” effect.</p>
+      </div>
+
+      <div class="projects">
+        <a class="project reveal tilt" href="#" aria-label="Project Nova (demo link)">
+          <div class="projTop">
+            <span class="tag">Case study</span>
+            <span class="meta">Nova</span>
+          </div>
+          <h3>Project Nova</h3>
+          <p>Design system + landing page with “glass” components and motion.</p>
+          <div class="projFoot">
+            <span class="pill2">UI</span>
+            <span class="pill2">Motion</span>
+            <span class="pill2">Brand</span>
+          </div>
+        </a>
+
+        <a class="project reveal tilt" href="#" aria-label="Project Helio (demo link)">
+          <div class="projTop">
+            <span class="tag">Prototype</span>
+            <span class="meta">Helio</span>
+          </div>
+          <h3>Project Helio</h3>
+          <p>Interactive dashboard styling without frameworks — just CSS variables.</p>
+          <div class="projFoot">
+            <span class="pill2">Charts</span>
+            <span class="pill2">Tokens</span>
+            <span class="pill2">A11y</span>
+          </div>
+        </a>
+
+        <a class="project reveal tilt" href="#" aria-label="Project Drift (demo link)">
+          <div class="projTop">
+            <span class="tag">Build</span>
+            <span class="meta">Drift</span>
+          </div>
+          <h3>Project Drift</h3>
+          <p>A fast personal site with sticky nav, active section tracking, and search.</p>
+          <div class="projFoot">
+            <span class="pill2">Pages</span>
+            <span class="pill2">SEO</span>
+            <span class="pill2">Perf</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section container" id="about">
+      <div class="sectionHead reveal">
+        <h2>About</h2>
+        <p>Timeline + testimonials for credibility vibes.</p>
+      </div>
+
+      <div class="aboutGrid">
+        <div class="timeline reveal">
+          <div class="tItem">
+            <div class="tDot" aria-hidden="true"></div>
+            <div>
+              <h3>2024 — Start</h3>
+              <p>Built a minimal site, iterated quickly, kept everything simple.</p>
+            </div>
+          </div>
+          <div class="tItem">
+            <div class="tDot" aria-hidden="true"></div>
+            <div>
+              <h3>2025 — Scale</h3>
+              <p>Added sections, polish, and interaction without adding a build step.</p>
+            </div>
+          </div>
+          <div class="tItem">
+            <div class="tDot" aria-hidden="true"></div>
+            <div>
+              <h3>2026 — Ship</h3>
+              <p>Custom domain, analytics, and automated deploys (still static).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="quotes">
+          <figure class="quote reveal">
+            <blockquote>
+              “This feels like a real product, not a static HTML page.”
+            </blockquote>
+            <figcaption>— someone who judges websites harshly</figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <blockquote>
+              “The Cmd-K search is unnecessary… which is why it’s perfect.”
+            </blockquote>
+            <figcaption>— your future self</figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <blockquote>
+              “I can’t believe this is GitHub Pages.”
+            </blockquote>
+            <figcaption>— your coworker after you send the link</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section container" id="pricing">
+      <div class="sectionHead reveal">
+        <h2>Pricing</h2>
+        <p>It’s free — but here’s a “pricing” section anyway, because aesthetics.</p>
+      </div>
+
+      <div class="pricing">
+        <div class="priceCard reveal">
+          <div class="priceTop">
+            <h3>Starter</h3>
+            <div class="price">$0</div>
+            <p>Perfect for learning GitHub Pages and shipping fast.</p>
+          </div>
+          <ul>
+            <li>Static hosting</li>
+            <li>Custom domain later</li>
+            <li>No build step</li>
+          </ul>
+          <a class="btn primary full" href="#contact">Use Starter</a>
+        </div>
+
+        <div class="priceCard featured reveal">
+          <div class="ribbon" aria-hidden="true">Popular</div>
+          <div class="priceTop">
+            <h3>Pro</h3>
+            <div class="price">$0</div>
+            <p>Same price. More swagger. (Mostly vibes.)</p>
+          </div>
+          <ul>
+            <li>Cmd-K search</li>
+            <li>Scroll reveal</li>
+            <li>Theme toggle</li>
+          </ul>
+          <a class="btn primary full" href="#work">See Pro</a>
+        </div>
+
+        <div class="priceCard reveal">
+          <div class="priceTop">
+            <h3>Enterprise</h3>
+            <div class="price">$0</div>
+            <p>When you need big “enterprise energy” on a tiny budget.</p>
+          </div>
+          <ul>
+            <li>SEO-friendly layout</li>
+            <li>Responsive grid</li>
+            <li>Clean codebase</li>
+          </ul>
+          <a class="btn primary full" href="#features">Explore</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section container" id="contact">
+      <div class="sectionHead reveal">
+        <h2>Contact</h2>
+        <p>This form is UI-only. Wire it to a service later if you want submissions.</p>
+      </div>
+
+      <div class="contact">
+        <form class="form reveal" id="contactForm">
+          <div class="row">
+            <label>
+              <span>Name</span>
+              <input required name="name" placeholder="Ada Lovelace" autocomplete="name" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input required type="email" name="email" placeholder="ada@domain.com" autocomplete="email" />
+            </label>
+          </div>
+
+          <label>
+            <span>What are you building?</span>
+            <input name="subject" placeholder="A portfolio, a docs site, a landing page..." />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea required name="message" rows="5" placeholder="Tell me what you want this to do..."></textarea>
+          </label>
+
+          <div class="row">
+            <button class="btn primary" type="submit">Send message</button>
+            <button class="btn ghost" type="button" id="fakeSubmit">
+              Fake submit (demo)
+            </button>
+            <span class="formNote" id="formNote" aria-live="polite"></span>
+          </div>
+        </form>
+
+        <aside class="contactAside reveal">
+          <div class="asideCard">
+            <h3>Quick links</h3>
+            <div class="asideLinks">
+              <a href="#top">Back to top</a>
+              <a href="#work">Work</a>
+              <a href="#features">Features</a>
+              <a href="#pricing">Pricing</a>
+            </div>
+          </div>
+
+          <div class="asideCard">
+            <h3>Notes</h3>
+            <p>
+              If you want this to accept form submissions later, easiest options:
+              Formspree, Netlify Forms (if hosted there), or a tiny serverless endpoint.
+            </p>
+            <div class="asidePills">
+              <span class="pill2">Static</span>
+              <span class="pill2">Fast</span>
+              <span class="pill2">No deps</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container foot">
+        <div>
+          <div class="brand small">
+            <span class="mark" aria-hidden="true"></span>
+            <span>Atlas</span>
+          </div>
+          <p class="muted">Built as a fancy GitHub Pages demo. Customize freely.</p>
+        </div>
+        <div class="footRight">
+          <a href="#top">Top</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cmd-K modal -->
+  <div class="modal" id="cmdk" role="dialog" aria-modal="true" aria-labelledby="cmdkTitle" hidden>
+    <div class="modalBackdrop" data-close="1"></div>
+    <div class="modalCard" role="document">
+      <div class="modalHead">
+        <div>
+          <div class="modalTitle" id="cmdkTitle">Search</div>
+          <div class="modalSub muted">Type to filter. Enter to jump. Esc to close.</div>
+        </div>
+        <button class="iconbtn" data-close="1" aria-label="Close search">✕</button>
+      </div>
+
+      <input id="cmdkInput" class="cmdkInput" placeholder="features, work, about, pricing, contact…" />
+
+      <div class="cmdkList" id="cmdkList" role="listbox" aria-label="Search results"></div>
+
+      <div class="cmdkHint muted">
+        <span class="kbd2">↑</span><span class="kbd2">↓</span> navigate
+        <span class="kbd2">Enter</span> open
+        <span class="kbd2">Esc</span> close
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>
