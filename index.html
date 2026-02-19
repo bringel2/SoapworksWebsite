@@ -2,40 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <title>Atlas — Fancy GitHub Pages Demo</title>
-  <meta name="description" content="A beefy, fancy static website demo for GitHub Pages." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Heartland Soapworks — Handcrafted Midwest Soap</title>
+  <meta name="description" content="Heartland Soapworks — handcrafted small-batch soap inspired by the Midwest. Bars $10 each." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Background ornaments -->
-  <div class="bg">
-    <div class="blob b1" aria-hidden="true"></div>
-    <div class="blob b2" aria-hidden="true"></div>
-    <div class="blob b3" aria-hidden="true"></div>
-    <div class="grid" aria-hidden="true"></div>
-    <div class="noise" aria-hidden="true"></div>
+  <!-- Warm prairie background ornaments -->
+  <div class="bg" aria-hidden="true">
+    <div class="grain"></div>
+    <div class="sunwash"></div>
+    <div class="fieldlines"></div>
   </div>
 
-  <!-- Top nav -->
   <header class="topbar" id="topbar">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Atlas home">
+      <a class="brand" href="index.html" aria-label="Heartland Soapworks home">
         <span class="mark" aria-hidden="true"></span>
-        <span>Atlas</span>
+        <span class="brandText">
+          <span class="brandName">Heartland Soapworks</span>
+          <span class="brandTag">Small-batch • Midwest-made</span>
+        </span>
       </a>
 
       <nav class="links" aria-label="primary">
-        <a href="#features">Features</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact" class="pill">Contact</a>
+        <a href="#shop">Shop</a>
+        <a href="#story">Our Story</a>
+        <a href="#markets">Markets</a>
+        <a href="about.html">About</a>
+        <a class="pill" href="#contact">Contact</a>
       </nav>
 
       <div class="actions">
@@ -43,9 +43,9 @@
           <span class="kbd">⌘K</span>
         </button>
         <button class="iconbtn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
-          <span id="themeIcon" aria-hidden="true">◐</span>
+          <span id="themeIcon" aria-hidden="true">☼</span>
         </button>
-        <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+        <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -53,375 +53,257 @@
 
     <div class="mobile" id="mobileMenu" hidden>
       <div class="container mobileInner">
-        <a href="#features">Features</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact" class="pill">Contact</a>
+        <a href="#shop">Shop</a>
+        <a href="#story">Our Story</a>
+        <a href="#markets">Markets</a>
+        <a href="about.html">About</a>
+        <a class="pill" href="#contact">Contact</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
   <main id="top">
+    <!-- HERO -->
     <section class="hero container">
       <div class="heroLeft">
         <div class="badge reveal">
-          <span class="dot"></span>
-          Static site. Fancy vibes. Zero backend.
+          <span class="badgeDot" aria-hidden="true"></span>
+          Handcrafted soap inspired by prairies, rivers, and small-town warmth.
         </div>
 
         <h1 class="reveal">
-          A <span class="grad">ridiculously polished</span> GitHub Pages site<br />
-          in pure HTML/CSS/JS.
+          Clean ingredients.<br />
+          <span class="grad">Heartland comfort.</span>
         </h1>
 
         <p class="lead reveal">
-          This is a “show-me-what-you-can-do” template: animated hero, scroll reveals, modal search,
-          dark mode, card interactions, and a clean responsive layout — all without frameworks.
+          Heartland Soapworks makes small-batch bars with a simple goal: a great lather, a gentle feel, and
+          scents that belong on a porch swing with a breeze rolling through.
         </p>
 
         <div class="cta reveal">
-          <a class="btn primary" href="#work">See the work</a>
-          <button class="btn ghost" id="copyBtn">
-            Copy deploy URL
-            <span class="hint" id="copyHint" aria-live="polite"></span>
-          </button>
+          <a class="btn primary" href="#shop">Shop soaps</a>
+          <a class="btn ghost" href="about.html">Read our story</a>
         </div>
 
-        <div class="stats reveal">
-          <div class="stat">
-            <div class="statN">95</div>
-            <div class="statL">Lighthouse-ish vibes</div>
-          </div>
-          <div class="stat">
-            <div class="statN">0</div>
-            <div class="statL">build steps</div>
-          </div>
-          <div class="stat">
-            <div class="statN">∞</div>
-            <div class="statL">customizable</div>
-          </div>
+        <div class="pillRow reveal" aria-label="Highlights">
+          <span class="pill2">$10 per bar</span>
+          <span class="pill2">Small-batch</span>
+          <span class="pill2">Gift-ready</span>
+          <span class="pill2">Made with care</span>
         </div>
       </div>
 
       <div class="heroRight reveal">
-        <div class="panel">
+        <div class="featurePanel">
           <div class="panelTop">
-            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-            <div class="panelTitle">live-preview.json</div>
-          </div>
-          <pre class="code" aria-label="Demo code panel"><code>{
-  "site": "Atlas",
-  "stack": ["HTML", "CSS", "JS"],
-  "features": [
-    "scroll-reveal",
-    "cmd-k search",
-    "dark mode",
-    "tilt cards",
-    "active nav"
-  ],
-  "deploy": "GitHub Pages"
-}</code></pre>
-
-          <div class="sparkline" aria-hidden="true">
-            <span style="height:32%"></span>
-            <span style="height:58%"></span>
-            <span style="height:41%"></span>
-            <span style="height:76%"></span>
-            <span style="height:54%"></span>
-            <span style="height:86%"></span>
-            <span style="height:63%"></span>
-            <span style="height:92%"></span>
-            <span style="height:69%"></span>
-            <span style="height:98%"></span>
-            <span style="height:73%"></span>
-            <span style="height:88%"></span>
+            <div class="stamp" aria-hidden="true">HS</div>
+            <div>
+              <div class="panelTitle">Seasonal Favorites</div>
+              <div class="muted">Tap a bar to preview</div>
+            </div>
           </div>
 
-          <div class="panelBottom">
-            <div class="chip">Accessible</div>
-            <div class="chip">Responsive</div>
-            <div class="chip">Fast</div>
-            <div class="chip">No framework</div>
+          <div class="preview" id="preview">
+            <img id="previewImg" src="assets/soap-oatmilk-honey.jpg" alt="Featured soap preview">
+            <div class="previewInfo">
+              <div class="previewName" id="previewName">Oat Milk &amp; Honey</div>
+              <div class="previewMeta">
+                <span class="priceTag">$10</span>
+                <span class="muted" id="previewNote">Warm • Cozy • Clean</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="thumbs" id="thumbs" aria-label="Soap thumbnails">
+            <button class="thumb active" data-name="Oat Milk &amp; Honey" data-note="Warm • Cozy • Clean" data-src="assets/soap-oatmilk-honey.jpg" aria-label="Oat Milk & Honey">
+              <img src="assets/soap-oatmilk-honey.jpg" alt="">
+            </button>
+            <button class="thumb" data-name="Fresh Falls" data-note="Crisp • Bright • Everyday" data-src="assets/soap-fresh-falls.jpg" aria-label="Fresh Falls">
+              <img src="assets/soap-fresh-falls.jpg" alt="">
+            </button>
+            <button class="thumb" data-name="Bourbon Wood" data-note="Smoky • Smooth • Cabin" data-src="assets/soap-bourbon-wood.jpg" aria-label="Bourbon Wood">
+              <img src="assets/soap-bourbon-wood.jpg" alt="">
+            </button>
+            <button class="thumb" data-name="Alpine Rapids" data-note="Cool • Clean • River air" data-src="assets/soap-alpine-rapids.jpg" aria-label="Alpine Rapids">
+              <img src="assets/soap-alpine-rapids.jpg" alt="">
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Logos / marquee -->
-    <section class="marqueeWrap">
-      <div class="marquee" aria-label="Scrolling marquee">
-        <div class="marqueeTrack">
-          <span>Scroll reveal</span><span>Magnetic buttons</span><span>Glass UI</span><span>Hero gradients</span>
-          <span>Cmd-K search</span><span>Dark mode</span><span>Tilt cards</span><span>Sticky nav</span>
-          <span>Scroll reveal</span><span>Magnetic buttons</span><span>Glass UI</span><span>Hero gradients</span>
-          <span>Cmd-K search</span><span>Dark mode</span><span>Tilt cards</span><span>Sticky nav</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section class="section container" id="features">
+    <!-- SHOP / PRODUCTS -->
+    <section class="section container" id="shop">
       <div class="sectionHead reveal">
-        <h2>Features that feel expensive</h2>
-        <p>These are the bits that make a static site feel like a product.</p>
+        <div>
+          <h2>Shop Soaps</h2>
+          <p>Every bar is <strong>$10</strong>. Mix and match for gifts, guest baskets, or daily use.</p>
+        </div>
+        <div class="noteBox">
+          <div class="noteTitle">Ordering</div>
+          <div class="muted">Add a link later (Etsy / Shopify / Square). For now this is a catalog.</div>
+        </div>
       </div>
 
-      <div class="cards3">
-        <article class="card reveal tilt">
-          <div class="cardIcon">✦</div>
-          <h3>Scroll-reveal</h3>
-          <p>Elements animate in as you scroll, with reduced-motion support built in.</p>
-          <ul>
-            <li>IntersectionObserver</li>
-            <li>Staggered delays</li>
-            <li>Accessible defaults</li>
-          </ul>
+      <div class="products">
+        <article class="productCard reveal tilt">
+          <div class="imgWrap">
+            <img src="assets/soap-oatmilk-honey.jpg" alt="Oat Milk & Honey soap bar">
+            <span class="pricePill">$10</span>
+          </div>
+          <h3>Oat Milk &amp; Honey</h3>
+          <p>Soft and comforting — a warm, clean scent with a cozy finish.</p>
+          <div class="tags">
+            <span class="tag">Comfort</span><span class="tag">Giftable</span><span class="tag">Creamy lather</span>
+          </div>
+          <button class="btn small ghost" data-toast="Catalog only (add checkout later).">Add to cart</button>
         </article>
 
-        <article class="card reveal tilt">
-          <div class="cardIcon">⌘</div>
-          <h3>Cmd-K Search</h3>
-          <p>Hit Ctrl/⌘ K to search sections and jump instantly.</p>
-          <ul>
-            <li>Keyboard-first</li>
-            <li>Fuzzy matching</li>
-            <li>Esc to close</li>
-          </ul>
+        <article class="productCard reveal tilt">
+          <div class="imgWrap">
+            <img src="assets/soap-fresh-falls.jpg" alt="Fresh Falls soap bar">
+            <span class="pricePill">$10</span>
+          </div>
+          <h3>Fresh Falls</h3>
+          <p>Bright and crisp — like cold river water on a summer morning.</p>
+          <div class="tags">
+            <span class="tag">Fresh</span><span class="tag">Everyday</span><span class="tag">Clean</span>
+          </div>
+          <button class="btn small ghost" data-toast="Catalog only (add checkout later).">Add to cart</button>
         </article>
 
-        <article class="card reveal tilt">
-          <div class="cardIcon">◐</div>
-          <h3>Dark Mode</h3>
-          <p>System preference aware, stored locally, toggles instantly.</p>
-          <ul>
-            <li>localStorage</li>
-            <li>Color-scheme hints</li>
-            <li>No flash</li>
-          </ul>
+        <article class="productCard reveal tilt">
+          <div class="imgWrap">
+            <img src="assets/soap-bourbon-wood.jpg" alt="Bourbon Wood soap bar">
+            <span class="pricePill">$10</span>
+          </div>
+          <h3>Bourbon Wood</h3>
+          <p>Warm woods and a hint of sweetness — porch-to-cabin energy.</p>
+          <div class="tags">
+            <span class="tag">Woodsy</span><span class="tag">Bold</span><span class="tag">Best-seller</span>
+          </div>
+          <button class="btn small ghost" data-toast="Catalog only (add checkout later).">Add to cart</button>
+        </article>
+
+        <article class="productCard reveal tilt">
+          <div class="imgWrap">
+            <img src="assets/soap-alpine-rapids.jpg" alt="Alpine Rapids soap bar">
+            <span class="pricePill">$10</span>
+          </div>
+          <h3>Alpine Rapids</h3>
+          <p>Cool and clean with a bright finish — fresh air in bar form.</p>
+          <div class="tags">
+            <span class="tag">Cool</span><span class="tag">Clean</span><span class="tag">Crisp</span>
+          </div>
+          <button class="btn small ghost" data-toast="Catalog only (add checkout later).">Add to cart</button>
+        </article>
+
+        <article class="productCard reveal tilt">
+          <div class="imgWrap">
+            <img src="assets/soap-citrus-grove.jpg" alt="Citrus Grove soap bar">
+            <span class="pricePill">$10</span>
+          </div>
+          <h3>Citrus Grove</h3>
+          <p>Sunny citrus with a smooth finish — bright, not sharp.</p>
+          <div class="tags">
+            <span class="tag">Bright</span><span class="tag">Morning</span><span class="tag">Cheerful</span>
+          </div>
+          <button class="btn small ghost" data-toast="Catalog only (add checkout later).">Add to cart</button>
+        </article>
+
+        <article class="productCard reveal tilt">
+          <div class="imgWrap">
+            <img src="assets/soap-lavender-field.jpg" alt="Lavender Field soap bar">
+            <span class="pricePill">$10</span>
+          </div>
+          <h3>Lavender Field</h3>
+          <p>Calming lavender that stays gentle — perfect before bed.</p>
+          <div class="tags">
+            <span class="tag">Calm</span><span class="tag">Relax</span><span class="tag">Classic</span>
+          </div>
+          <button class="btn small ghost" data-toast="Catalog only (add checkout later).">Add to cart</button>
         </article>
       </div>
+    </section>
 
+    <!-- STORY PREVIEW -->
+    <section class="section container" id="story">
       <div class="split reveal">
         <div class="splitLeft">
-          <h3>Built like a landing page, wired like an app.</h3>
-          <p>
-            This template keeps things clean: semantic HTML, CSS tokens, tiny JS utilities.
-            No bundlers, no dependencies, still “premium.”
+          <h2>Made in the Heartland</h2>
+          <p class="muted">
+            Heartland Soapworks is a small, Midwest-inspired soap studio. We design scents that feel familiar:
+            clean linens, warm woods, bright citrus, and “fresh after the rain.”
           </p>
           <div class="chips">
-            <span class="chip">Semantic sections</span>
-            <span class="chip">Active nav</span>
-            <span class="chip">Smooth anchors</span>
-            <span class="chip">Mobile menu</span>
-            <span class="chip">Microinteractions</span>
-            <span class="chip">Reduced motion</span>
+            <span class="chip">Small-batch</span>
+            <span class="chip">Handmade</span>
+            <span class="chip">Gift-ready</span>
+            <span class="chip">Simple &amp; clean</span>
+          </div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn primary" href="about.html">About Heartland</a>
+            <a class="btn ghost" href="#contact">Ask a question</a>
           </div>
         </div>
 
         <div class="splitRight">
-          <div class="miniGrid">
-            <div class="mini reveal">
-              <div class="miniTop">
-                <span class="miniK">Performance</span>
-                <span class="miniV">Fast</span>
-              </div>
-              <div class="bar" style="--p: 88%"></div>
-            </div>
-            <div class="mini reveal">
-              <div class="miniTop">
-                <span class="miniK">Accessibility</span>
-                <span class="miniV">Solid</span>
-              </div>
-              <div class="bar" style="--p: 92%"></div>
-            </div>
-            <div class="mini reveal">
-              <div class="miniTop">
-                <span class="miniK">SEO</span>
-                <span class="miniV">Ready</span>
-              </div>
-              <div class="bar" style="--p: 84%"></div>
-            </div>
-            <div class="mini reveal">
-              <div class="miniTop">
-                <span class="miniK">Style</span>
-                <span class="miniV">Extra</span>
-              </div>
-              <div class="bar" style="--p: 97%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work / Projects -->
-    <section class="section container" id="work">
-      <div class="sectionHead reveal">
-        <h2>Work</h2>
-        <p>Hover cards, subtle tilt, and a “shine” effect.</p>
-      </div>
-
-      <div class="projects">
-        <a class="project reveal tilt" href="#" aria-label="Project Nova (demo link)">
-          <div class="projTop">
-            <span class="tag">Case study</span>
-            <span class="meta">Nova</span>
-          </div>
-          <h3>Project Nova</h3>
-          <p>Design system + landing page with “glass” components and motion.</p>
-          <div class="projFoot">
-            <span class="pill2">UI</span>
-            <span class="pill2">Motion</span>
-            <span class="pill2">Brand</span>
-          </div>
-        </a>
-
-        <a class="project reveal tilt" href="#" aria-label="Project Helio (demo link)">
-          <div class="projTop">
-            <span class="tag">Prototype</span>
-            <span class="meta">Helio</span>
-          </div>
-          <h3>Project Helio</h3>
-          <p>Interactive dashboard styling without frameworks — just CSS variables.</p>
-          <div class="projFoot">
-            <span class="pill2">Charts</span>
-            <span class="pill2">Tokens</span>
-            <span class="pill2">A11y</span>
-          </div>
-        </a>
-
-        <a class="project reveal tilt" href="#" aria-label="Project Drift (demo link)">
-          <div class="projTop">
-            <span class="tag">Build</span>
-            <span class="meta">Drift</span>
-          </div>
-          <h3>Project Drift</h3>
-          <p>A fast personal site with sticky nav, active section tracking, and search.</p>
-          <div class="projFoot">
-            <span class="pill2">Pages</span>
-            <span class="pill2">SEO</span>
-            <span class="pill2">Perf</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="section container" id="about">
-      <div class="sectionHead reveal">
-        <h2>About</h2>
-        <p>Timeline + testimonials for credibility vibes.</p>
-      </div>
-
-      <div class="aboutGrid">
-        <div class="timeline reveal">
-          <div class="tItem">
-            <div class="tDot" aria-hidden="true"></div>
-            <div>
-              <h3>2024 — Start</h3>
-              <p>Built a minimal site, iterated quickly, kept everything simple.</p>
-            </div>
-          </div>
-          <div class="tItem">
-            <div class="tDot" aria-hidden="true"></div>
-            <div>
-              <h3>2025 — Scale</h3>
-              <p>Added sections, polish, and interaction without adding a build step.</p>
-            </div>
-          </div>
-          <div class="tItem">
-            <div class="tDot" aria-hidden="true"></div>
-            <div>
-              <h3>2026 — Ship</h3>
-              <p>Custom domain, analytics, and automated deploys (still static).</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="quotes">
-          <figure class="quote reveal">
+          <div class="quoteCard">
+            <div class="quoteMark" aria-hidden="true">“</div>
             <blockquote>
-              “This feels like a real product, not a static HTML page.”
+              We want every bar to feel like a little Midwest reset — clean hands, quiet mind, and a scent
+              that belongs in your home.
             </blockquote>
-            <figcaption>— someone who judges websites harshly</figcaption>
-          </figure>
-
-          <figure class="quote reveal">
-            <blockquote>
-              “The Cmd-K search is unnecessary… which is why it’s perfect.”
-            </blockquote>
-            <figcaption>— your future self</figcaption>
-          </figure>
-
-          <figure class="quote reveal">
-            <blockquote>
-              “I can’t believe this is GitHub Pages.”
-            </blockquote>
-            <figcaption>— your coworker after you send the link</figcaption>
-          </figure>
+            <div class="quoteBy muted">— Heartland Soapworks</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="section container" id="pricing">
+    <!-- MARKETS -->
+    <section class="section container" id="markets">
       <div class="sectionHead reveal">
-        <h2>Pricing</h2>
-        <p>It’s free — but here’s a “pricing” section anyway, because aesthetics.</p>
+        <div>
+          <h2>Find us in person</h2>
+          <p>Farmers markets, pop-ups, and seasonal events. (Edit these placeholders.)</p>
+        </div>
       </div>
 
-      <div class="pricing">
-        <div class="priceCard reveal">
-          <div class="priceTop">
-            <h3>Starter</h3>
-            <div class="price">$0</div>
-            <p>Perfect for learning GitHub Pages and shipping fast.</p>
+      <div class="markets">
+        <div class="marketCard reveal">
+          <div class="marketTop">
+            <h3>Saturday Market</h3>
+            <span class="pill2">Weekly</span>
           </div>
-          <ul>
-            <li>Static hosting</li>
-            <li>Custom domain later</li>
-            <li>No build step</li>
-          </ul>
-          <a class="btn primary full" href="#contact">Use Starter</a>
+          <p class="muted">Downtown • 9am–1pm • Look for the Heartland banner.</p>
         </div>
 
-        <div class="priceCard featured reveal">
-          <div class="ribbon" aria-hidden="true">Popular</div>
-          <div class="priceTop">
-            <h3>Pro</h3>
-            <div class="price">$0</div>
-            <p>Same price. More swagger. (Mostly vibes.)</p>
+        <div class="marketCard reveal">
+          <div class="marketTop">
+            <h3>Fall Festival</h3>
+            <span class="pill2">Seasonal</span>
           </div>
-          <ul>
-            <li>Cmd-K search</li>
-            <li>Scroll reveal</li>
-            <li>Theme toggle</li>
-          </ul>
-          <a class="btn primary full" href="#work">See Pro</a>
+          <p class="muted">October • Local makers • Limited seasonal scents.</p>
         </div>
 
-        <div class="priceCard reveal">
-          <div class="priceTop">
-            <h3>Enterprise</h3>
-            <div class="price">$0</div>
-            <p>When you need big “enterprise energy” on a tiny budget.</p>
+        <div class="marketCard reveal">
+          <div class="marketTop">
+            <h3>Holiday Pop-Up</h3>
+            <span class="pill2">Limited</span>
           </div>
-          <ul>
-            <li>SEO-friendly layout</li>
-            <li>Responsive grid</li>
-            <li>Clean codebase</li>
-          </ul>
-          <a class="btn primary full" href="#features">Explore</a>
+          <p class="muted">November–December • Gift sets + stocking stuffers.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="section container" id="contact">
       <div class="sectionHead reveal">
-        <h2>Contact</h2>
-        <p>This form is UI-only. Wire it to a service later if you want submissions.</p>
+        <div>
+          <h2>Contact</h2>
+          <p>Want a custom bundle, wedding favors, or wholesale? Send a note.</p>
+        </div>
       </div>
 
       <div class="contact">
@@ -429,54 +311,47 @@
           <div class="row">
             <label>
               <span>Name</span>
-              <input required name="name" placeholder="Ada Lovelace" autocomplete="name" />
+              <input required name="name" placeholder="Your name" autocomplete="name" />
             </label>
             <label>
               <span>Email</span>
-              <input required type="email" name="email" placeholder="ada@domain.com" autocomplete="email" />
+              <input required type="email" name="email" placeholder="you@email.com" autocomplete="email" />
             </label>
           </div>
 
           <label>
-            <span>What are you building?</span>
-            <input name="subject" placeholder="A portfolio, a docs site, a landing page..." />
-          </label>
-
-          <label>
             <span>Message</span>
-            <textarea required name="message" rows="5" placeholder="Tell me what you want this to do..."></textarea>
+            <textarea required name="message" rows="5" placeholder="How can we help?"></textarea>
           </label>
 
           <div class="row">
-            <button class="btn primary" type="submit">Send message</button>
-            <button class="btn ghost" type="button" id="fakeSubmit">
-              Fake submit (demo)
-            </button>
+            <button class="btn primary" type="submit">Send</button>
+            <button class="btn ghost" type="button" id="fakeSubmit">Demo submit</button>
             <span class="formNote" id="formNote" aria-live="polite"></span>
+          </div>
+
+          <div class="fine muted">
+            This form is UI-only on GitHub Pages. Later you can wire it to Formspree, a serverless function, or Shopify/Square contact.
           </div>
         </form>
 
         <aside class="contactAside reveal">
           <div class="asideCard">
-            <h3>Quick links</h3>
-            <div class="asideLinks">
-              <a href="#top">Back to top</a>
-              <a href="#work">Work</a>
-              <a href="#features">Features</a>
-              <a href="#pricing">Pricing</a>
+            <h3>Quick info</h3>
+            <div class="asideFacts">
+              <div><span class="muted">Price</span><span>$10 / bar</span></div>
+              <div><span class="muted">Batch</span><span>Small-batch</span></div>
+              <div><span class="muted">Gifts</span><span>Available</span></div>
             </div>
           </div>
 
           <div class="asideCard">
-            <h3>Notes</h3>
-            <p>
-              If you want this to accept form submissions later, easiest options:
-              Formspree, Netlify Forms (if hosted there), or a tiny serverless endpoint.
-            </p>
-            <div class="asidePills">
-              <span class="pill2">Static</span>
-              <span class="pill2">Fast</span>
-              <span class="pill2">No deps</span>
+            <h3>Links</h3>
+            <div class="asideLinks">
+              <a href="#shop">Shop</a>
+              <a href="about.html">About</a>
+              <a href="#markets">Markets</a>
+              <a href="#top">Back to top</a>
             </div>
           </div>
         </aside>
@@ -488,13 +363,13 @@
         <div>
           <div class="brand small">
             <span class="mark" aria-hidden="true"></span>
-            <span>Atlas</span>
+            <span class="brandName">Heartland Soapworks</span>
           </div>
-          <p class="muted">Built as a fancy GitHub Pages demo. Customize freely.</p>
+          <p class="muted">Handcrafted soap with Midwest warmth.</p>
         </div>
         <div class="footRight">
-          <a href="#top">Top</a>
-          <a href="#features">Features</a>
+          <a href="about.html">About</a>
+          <a href="#shop">Shop</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -513,7 +388,7 @@
         <button class="iconbtn" data-close="1" aria-label="Close search">✕</button>
       </div>
 
-      <input id="cmdkInput" class="cmdkInput" placeholder="features, work, about, pricing, contact…" />
+      <input id="cmdkInput" class="cmdkInput" placeholder="shop, story, markets, contact…" />
 
       <div class="cmdkList" id="cmdkList" role="listbox" aria-label="Search results"></div>
 
@@ -524,6 +399,8 @@
       </div>
     </div>
   </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <script src="app.js"></script>
 </body>

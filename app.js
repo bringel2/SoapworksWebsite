@@ -1,27 +1,29 @@
-// Atlas demo — tiny JS, big vibes.
+// Heartland Soapworks — fancy behavior, warm vibe.
 
 const $ = (q, el = document) => el.querySelector(q);
 const $$ = (q, el = document) => Array.from(el.querySelectorAll(q));
 
 /* ---------------------------
-   Theme
+   Theme (default: light)
 ---------------------------- */
 (function initTheme(){
-  const stored = localStorage.getItem("atlas_theme");
+  const stored = localStorage.getItem("hs_theme");
   const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+
+  // Midwest vibe default: light. If user has system dark and no stored pref, use dark.
   const theme = stored ?? (prefersDark ? "dark" : "light");
   setTheme(theme);
 })();
 
 function setTheme(theme){
   document.documentElement.dataset.theme = theme;
-  localStorage.setItem("atlas_theme", theme);
+  localStorage.setItem("hs_theme", theme);
   const icon = $("#themeIcon");
-  if (icon) icon.textContent = theme === "dark" ? "◐" : "◑";
+  if (icon) icon.textContent = theme === "dark" ? "☾" : "☼";
 }
 
 $("#themeBtn")?.addEventListener("click", () => {
-  const cur = document.documentElement.dataset.theme || "dark";
+  const cur = document.documentElement.dataset.theme || "light";
   setTheme(cur === "dark" ? "light" : "dark");
 });
 
@@ -69,88 +71,142 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 reveals.forEach((el, i) => {
-  el.style.transitionDelay = `${Math.min(i * 60, 240)}ms`;
+  el.style.transitionDelay = `${Math.min(i * 55, 220)}ms`;
   io.observe(el);
 });
 
 /* ---------------------------
-   Active nav highlight
----------------------------- */
-const sections = ["features","work","about","pricing","contact"]
-  .map(id => document.getElementById(id))
-  .filter(Boolean);
-
-const navLinks = $$(".links a").filter(a => a.getAttribute("href")?.startsWith("#"));
-
-const sectionIO = new IntersectionObserver((entries) => {
-  // pick most visible intersecting section
-  const visible = entries
-    .filter(e => e.isIntersecting)
-    .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-  if (!visible) return;
-  const id = visible.target.id;
-
-  navLinks.forEach(a => {
-    const active = a.getAttribute("href") === `#${id}`;
-    a.classList.toggle("active", active);
-  });
-}, { rootMargin: "-20% 0px -65% 0px", threshold: [0.12, 0.25, 0.4, 0.6] });
-
-sections.forEach(s => sectionIO.observe(s));
-
-/* ---------------------------
-   Tilt + shine on hover
+   Tilt cards (subtle)
 ---------------------------- */
 function tiltHandler(el){
   const rect = () => el.getBoundingClientRect();
-
   function move(e){
     const r = rect();
-    const x = (e.clientX - r.left) / r.width;   // 0..1
-    const y = (e.clientY - r.top) / r.height;   // 0..1
-    const rx = (y - 0.5) * -10;
-    const ry = (x - 0.5) * 12;
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top) / r.height;
+    const rx = (y - 0.5) * -7;
+    const ry = (x - 0.5) * 8;
     el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
-    el.style.setProperty("--mx", `${x*100}%`);
-    el.style.setProperty("--my", `${y*100}%`);
   }
-
-  function leave(){
-    el.style.transform = "";
-  }
-
+  function leave(){ el.style.transform = ""; }
   el.addEventListener("mousemove", move);
   el.addEventListener("mouseleave", leave);
 }
-
 $$(".tilt").forEach(tiltHandler);
 
 /* ---------------------------
-   Cmd-K search modal
+   Hero preview thumbnails (index only)
+---------------------------- */
+const thumbs = $("#thumbs");
+const previewImg = $("#previewImg");
+const previewName = $("#previewName");
+const previewNote = $("#previewNote");
+
+thumbs?.addEventListener("click", (e) => {
+  const btn = e.target.closest(".thumb");
+  if (!btn) return;
+
+  $$(".thumb", thumbs).forEach(t => t.classList.remove("active"));
+  btn.classList.add("active");
+
+  const src = btn.dataset.src;
+  const name = btn.dataset.name;
+  const note = btn.dataset.note;
+
+  if (src && previewImg) previewImg.src = src;
+  if (name && previewName) previewName.innerHTML = name;
+  if (note && previewNote) previewNote.textContent = note;
+});
+
+/* ---------------------------
+   Toast utility
+---------------------------- */
+const toast = $("#toast");
+let toastTimer = null;
+
+function showToast(msg){
+  if (!toast) return;
+  toast.hidden = false;
+  toast.textContent = msg;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toast.hidden = true; }, 1600);
+}
+
+$$("[data-toast]").forEach(btn => {
+  btn.addEventListener("click", () => showToast(btn.dataset.toast));
+});
+
+/* ---------------------------
+   Contact form demo (index only)
+---------------------------- */
+const form = $("#contactForm");
+const fake = $("#fakeSubmit");
+const formNote = $("#formNote");
+
+function flashNote(msg){
+  if (!formNote) return;
+  formNote.textContent = msg;
+  setTimeout(() => (formNote.textContent = ""), 1800);
+}
+
+form?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  flashNote("This is UI-only on GitHub Pages. Hook it to a form service when ready.");
+  showToast("Message queued (demo).");
+});
+
+fake?.addEventListener("click", () => {
+  flashNote("Demo: pretend message sent.");
+  showToast("Sent ✨ (demo)");
+});
+
+/* ---------------------------
+   Cmd-K search modal (works on both pages)
 ---------------------------- */
 const cmdk = $("#cmdk");
 const cmdkBtn = $("#cmdkBtn");
 const cmdkInput = $("#cmdkInput");
 const cmdkList = $("#cmdkList");
 
-const targets = [
-  { id: "top", label: "Top", hint: "Hero / intro" },
-  { id: "features", label: "Features", hint: "What you get" },
-  { id: "work", label: "Work", hint: "Projects" },
-  { id: "about", label: "About", hint: "Timeline + quotes" },
-  { id: "pricing", label: "Pricing", hint: "The aesthetic section" },
-  { id: "contact", label: "Contact", hint: "Form UI" },
-];
+function pageTargets(){
+  // Detect what sections exist on the current page
+  const t = [];
+  const add = (id, label, hint, hrefOverride=null) => {
+    const el = document.getElementById(id);
+    if (el) t.push({ id, label, hint, href: hrefOverride ?? `#${id}` });
+  };
 
+  // common
+  t.push({ id:"home", label:"Home", hint:"Return home", href:"index.html" });
+
+  // index sections
+  add("shop", "Shop", "Browse soaps ($10)", "#shop");
+  add("story", "Our Story", "Midwest-made", "#story");
+  add("markets", "Markets", "Find us in person", "#markets");
+  add("contact", "Contact", "Ask a question", "#contact");
+
+  // about page sections (no ids besides page structure; offer anchors via href)
+  if (location.pathname.endsWith("about.html") || document.querySelector(".aboutPage")){
+    t.push({ id:"about", label:"About", hint:"This page", href:"about.html" });
+    t.push({ id:"shop", label:"Shop", hint:"Go to products", href:"index.html#shop" });
+    t.push({ id:"contact", label:"Contact", hint:"Send a message", href:"index.html#contact" });
+  } else {
+    t.push({ id:"about", label:"About", hint:"Learn about Heartland", href:"about.html" });
+  }
+
+  return t;
+}
+
+let targets = pageTargets();
 let selected = 0;
 let filtered = targets;
 
 function openCmdk(){
   if (!cmdk) return;
   cmdk.hidden = false;
-  selected = 0;
+  targets = pageTargets();
   filtered = targets;
+  selected = 0;
   renderCmdk();
   setTimeout(() => cmdkInput?.focus(), 0);
 }
@@ -158,11 +214,10 @@ function openCmdk(){
 function closeCmdk(){
   if (!cmdk) return;
   cmdk.hidden = true;
-  cmdkInput && (cmdkInput.value = "");
+  if (cmdkInput) cmdkInput.value = "";
 }
 
 function scoreMatch(q, text){
-  // tiny fuzzy-ish score: sequential char match + substring boost
   q = q.toLowerCase().trim();
   text = text.toLowerCase();
   if (!q) return 0;
@@ -183,13 +238,12 @@ function scoreMatch(q, text){
 function renderCmdk(){
   if (!cmdkList) return;
   cmdkList.innerHTML = "";
-
   filtered.forEach((t, i) => {
     const item = document.createElement("div");
     item.className = "cmdkItem";
     item.setAttribute("role", "option");
     item.setAttribute("aria-selected", String(i === selected));
-    item.innerHTML = `<div><strong>${t.label}</strong><div class="muted" style="font-size:12px">${t.hint}</div></div><small>#${t.id}</small>`;
+    item.innerHTML = `<div><strong>${t.label}</strong><div class="muted" style="font-size:12px">${t.hint}</div></div><small>${t.href}</small>`;
     item.addEventListener("click", () => jumpTo(i));
     cmdkList.appendChild(item);
   });
@@ -199,7 +253,15 @@ function jumpTo(i){
   const t = filtered[i];
   if (!t) return;
   closeCmdk();
-  document.getElementById(t.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  // Same-page anchor navigation if href starts with #
+  if (t.href?.startsWith("#")){
+    document.querySelector(t.href)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+
+  // Otherwise navigate
+  window.location.href = t.href;
 }
 
 cmdkBtn?.addEventListener("click", openCmdk);
@@ -244,43 +306,4 @@ cmdkInput?.addEventListener("input", () => {
     .sort((a,b) => (b._score - a._score));
   selected = 0;
   renderCmdk();
-});
-
-/* ---------------------------
-   Copy deploy URL (best-effort)
----------------------------- */
-const copyBtn = $("#copyBtn");
-const copyHint = $("#copyHint");
-
-copyBtn?.addEventListener("click", async () => {
-  const url = location.href;
-  try{
-    await navigator.clipboard.writeText(url);
-    if (copyHint) copyHint.textContent = "Copied!";
-  } catch {
-    if (copyHint) copyHint.textContent = "Couldn’t copy (permissions).";
-  }
-  setTimeout(() => { if (copyHint) copyHint.textContent = ""; }, 1200);
-});
-
-/* ---------------------------
-   Contact form demo
----------------------------- */
-const form = $("#contactForm");
-const fake = $("#fakeSubmit");
-const formNote = $("#formNote");
-
-function flashNote(msg){
-  if (!formNote) return;
-  formNote.textContent = msg;
-  setTimeout(() => (formNote.textContent = ""), 1600);
-}
-
-form?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  flashNote("This is UI-only. Wire to a backend/service if you want real submissions.");
-});
-
-fake?.addEventListener("click", () => {
-  flashNote("Demo: pretend message sent ✨");
 });
