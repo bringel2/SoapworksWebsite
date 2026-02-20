@@ -3,96 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
-  <title>FAQ — Heartland Soapworks</title>
-  <meta name="description" content="Frequently asked questions." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <title>FAQ — Your Brand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="bg" aria-hidden="true"><div class="grain"></div><div class="sunwash"></div><div class="fieldlines"></div></div>
-
-  <header class="topbar" id="topbar" data-page="faq">
-    <div class="container nav">
-      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="brandText"><span class="brandName">Heartland Soapworks</span><span class="brandTag">Small-batch • Midwest-made</span></span></a>
-      <nav class="links" aria-label="primary">
-        <a href="shop.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="ingredients.html">Ingredients</a>
-        <a href="markets.html">Markets</a>
-        <a href="wholesale.html">Wholesale</a>
-        <a class="active" href="faq.html">FAQ</a>
-        <a class="pill" href="contact.html">Contact</a>
-      </nav>
-      <div class="actions">
-        <button class="iconbtn" id="cmdkBtn" aria-label="Open search"><span class="kbd">⌘K</span></button>
-        <button class="iconbtn" id="themeBtn" aria-label="Toggle theme"><span id="themeIcon" aria-hidden="true">☼</span></button>
-        <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-    <div class="mobile" id="mobileMenu" hidden>
-      <div class="container mobileInner">
-        <a href="shop.html">Shop</a><a href="about.html">About</a><a href="ingredients.html">Ingredients</a><a href="gallery.html">Gallery</a><a href="markets.html">Markets</a><a href="wholesale.html">Wholesale</a><a href="faq.html">FAQ</a><a class="pill" href="contact.html">Contact</a>
-      </div>
-    </div>
+<body class="bg-white text-zinc-900">
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a class="text-lg font-semibold tracking-tight" href="index.html">Your Brand</a>
+    <nav class="flex gap-6 text-sm">
+      <a class="hover:underline" href="products.html">Products</a>
+      <a class="hover:underline" href="about.html">About</a>
+      <a class="hover:underline font-medium" href="faq.html">FAQ</a>
+      <a class="hover:underline" href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main class="container page">
-    <section class="pageHero">
-      <div class="badge reveal"><span class="badgeDot" aria-hidden="true"></span>FAQ</div>
-      <h1 class="reveal">Common questions</h1>
-      <p class="lead reveal">Replace answers with your exact policies as you finalize them.</p>
+  <main class="max-w-6xl mx-auto px-6">
+    <section class="py-12 border-t border-zinc-200">
+      <h1 class="text-3xl font-semibold">FAQ</h1>
+      <p class="mt-2 text-zinc-600">Shipping, returns, ingredients, and ordering.</p>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <details class="rounded-2xl border border-zinc-200 p-5">
+          <summary class="cursor-pointer font-medium">How long does shipping take?</summary>
+          <p class="mt-2 text-sm text-zinc-600">Answer here.</p>
+        </details>
+
+        <details class="rounded-2xl border border-zinc-200 p-5">
+          <summary class="cursor-pointer font-medium">What’s your return policy?</summary>
+          <p class="mt-2 text-sm text-zinc-600">Answer here.</p>
+        </details>
+
+        <details class="rounded-2xl border border-zinc-200 p-5">
+          <summary class="cursor-pointer font-medium">Do you do custom orders?</summary>
+          <p class="mt-2 text-sm text-zinc-600">Answer here.</p>
+        </details>
+
+        <details class="rounded-2xl border border-zinc-200 p-5">
+          <summary class="cursor-pointer font-medium">Do you use fragrance / essential oils?</summary>
+          <p class="mt-2 text-sm text-zinc-600">Answer here.</p>
+        </details>
+
+        <details class="rounded-2xl border border-zinc-200 p-5">
+          <summary class="cursor-pointer font-medium">How should I store the product?</summary>
+          <p class="mt-2 text-sm text-zinc-600">Answer here.</p>
+        </details>
+
+        <details class="rounded-2xl border border-zinc-200 p-5">
+          <summary class="cursor-pointer font-medium">Where are you located?</summary>
+          <p class="mt-2 text-sm text-zinc-600">Answer here.</p>
+        </details>
+      </div>
+
+      <div class="mt-12 rounded-3xl border border-zinc-200 p-8 bg-zinc-50">
+        <h2 class="text-xl font-semibold">Still have a question?</h2>
+        <p class="mt-2 text-zinc-600">Send a message and I’ll reply quickly.</p>
+        <a class="mt-5 inline-block px-5 py-3 rounded-xl bg-zinc-900 text-white text-sm hover:bg-zinc-800" href="contact.html">
+          Contact
+        </a>
+      </div>
     </section>
-
-    <section class="section" style="padding-top:18px">
-      <div class="faq">
-        <details class="faqItem reveal">
-          <summary>How much are the bars?</summary>
-          <p class="muted">All standard bars are $10 each.</p>
-        </details>
-        <details class="faqItem reveal">
-          <summary>How do I make the bar last longer?</summary>
-          <p class="muted">Let it dry between uses—use a draining soap dish.</p>
-        </details>
-        <details class="faqItem reveal">
-          <summary>Do you do custom bundles?</summary>
-          <p class="muted">Yes—gift sets, wedding favors, and small custom runs. Contact us.</p>
-        </details>
-        <details class="faqItem reveal">
-          <summary>What if I have sensitivities?</summary>
-          <p class="muted">We can help you choose. See Ingredients for notes and reach out with questions.</p>
-        </details>
-      </div>
-
-      <div class="callout reveal" style="margin-top:18px">
-        <div>
-          <h3>Didn’t see your question?</h3>
-          <p class="muted">Send a message and we’ll help.</p>
-        </div>
-        <a class="btn primary" href="contact.html">Contact</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container foot">
-        <div><div class="brand small"><span class="mark" aria-hidden="true"></span><span class="brandName">Heartland Soapworks</span></div><p class="muted">Handcrafted soap with Midwest warmth.</p></div>
-        <div class="footRight"><a href="shop.html">Shop</a><a href="contact.html">Contact</a></div>
-      </div>
-    </footer>
   </main>
 
-  <div class="modal" id="cmdk" role="dialog" aria-modal="true" aria-labelledby="cmdkTitle" hidden>
-    <div class="modalBackdrop" data-close="1"></div>
-    <div class="modalCard" role="document">
-      <div class="modalHead"><div><div class="modalTitle" id="cmdkTitle">Search</div><div class="modalSub muted">Type to filter. Enter to open. Esc to close.</div></div><button class="iconbtn" data-close="1" aria-label="Close">✕</button></div>
-      <input id="cmdkInput" class="cmdkInput" placeholder="shop, ingredients, markets…" />
-      <div class="cmdkList" id="cmdkList" role="listbox"></div>
-      <div class="cmdkHint muted"><span class="kbd2">↑</span><span class="kbd2">↓</span><span class="kbd2">Enter</span><span class="kbd2">Esc</span></div>
+  <footer class="border-t border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 py-10 text-sm text-zinc-500 flex flex-wrap gap-4 justify-between">
+      <span>© <span id="y"></span> Your Brand</span>
+      <span>Made with HTML + Tailwind CDN</span>
     </div>
-  </div>
+  </footer>
 
-  <script src="app.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

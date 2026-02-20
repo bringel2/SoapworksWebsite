@@ -3,105 +3,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
-  <title>Contact — Heartland Soapworks</title>
-  <meta name="description" content="Contact Heartland Soapworks." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <title>Contact — Your Brand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="bg" aria-hidden="true"><div class="grain"></div><div class="sunwash"></div><div class="fieldlines"></div></div>
-
-  <header class="topbar" id="topbar" data-page="contact">
-    <div class="container nav">
-      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="brandText"><span class="brandName">Heartland Soapworks</span><span class="brandTag">Small-batch • Midwest-made</span></span></a>
-      <nav class="links" aria-label="primary">
-        <a href="shop.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="ingredients.html">Ingredients</a>
-        <a href="markets.html">Markets</a>
-        <a href="wholesale.html">Wholesale</a>
-        <a href="faq.html">FAQ</a>
-        <a class="active pill" href="contact.html">Contact</a>
-      </nav>
-      <div class="actions">
-        <button class="iconbtn" id="cmdkBtn" aria-label="Open search"><span class="kbd">⌘K</span></button>
-        <button class="iconbtn" id="themeBtn" aria-label="Toggle theme"><span id="themeIcon" aria-hidden="true">☼</span></button>
-        <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-    <div class="mobile" id="mobileMenu" hidden>
-      <div class="container mobileInner">
-        <a href="shop.html">Shop</a><a href="about.html">About</a><a href="ingredients.html">Ingredients</a><a href="gallery.html">Gallery</a><a href="markets.html">Markets</a><a href="wholesale.html">Wholesale</a><a href="faq.html">FAQ</a><a class="pill" href="contact.html">Contact</a>
-      </div>
-    </div>
+<body class="bg-white text-zinc-900">
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a class="text-lg font-semibold tracking-tight" href="index.html">Your Brand</a>
+    <nav class="flex gap-6 text-sm">
+      <a class="hover:underline" href="products.html">Products</a>
+      <a class="hover:underline" href="about.html">About</a>
+      <a class="hover:underline" href="faq.html">FAQ</a>
+      <a class="hover:underline font-medium" href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main class="container page">
-    <section class="pageHero">
-      <div class="badge reveal"><span class="badgeDot" aria-hidden="true"></span>Contact</div>
-      <h1 class="reveal">Send a note</h1>
-      <p class="lead reveal">Wholesale, custom bundles, ingredient questions — we’ll help.</p>
-    </section>
+  <main class="max-w-6xl mx-auto px-6">
+    <section class="py-12 border-t border-zinc-200">
+      <h1 class="text-3xl font-semibold">Contact</h1>
+      <p class="mt-2 text-zinc-600">
+        Put your real email + social links here. (Form can come later.)
+      </p>
 
-    <section class="section" style="padding-top:18px">
-      <div class="contact">
-        <form class="form reveal" id="contactForm">
-          <div class="row">
-            <label><span>Name</span><input required name="name" placeholder="Your name" autocomplete="name" /></label>
-            <label><span>Email</span><input required type="email" name="email" placeholder="you@email.com" autocomplete="email" /></label>
-          </div>
-          <label><span>Message</span><textarea required name="message" rows="5" placeholder="How can we help?"></textarea></label>
-          <div class="row">
-            <button class="btn primary" type="submit">Send</button>
-            <button class="btn ghost" type="button" id="fakeSubmit">Demo submit</button>
-            <span class="formNote" id="formNote" aria-live="polite"></span>
-          </div>
-          <div class="fine muted">UI-only on GitHub Pages. Later: Formspree / a serverless endpoint / Shopify contact.</div>
-        </form>
+      <div class="mt-10 grid lg:grid-cols-2 gap-6">
+        <div class="rounded-3xl border border-zinc-200 p-8 bg-zinc-50">
+          <h2 class="text-xl font-semibold">Order</h2>
+          <p class="mt-2 text-zinc-600">Tell people how to buy right now.</p>
 
-        <aside class="contactAside reveal">
-          <div class="asideCard">
-            <h3>Quick info</h3>
-            <div class="asideFacts">
-              <div><span class="muted">Price</span><span>$10 / bar</span></div>
-              <div><span class="muted">Bundles</span><span>Available</span></div>
-              <div><span class="muted">Wholesale</span><span>Available</span></div>
-            </div>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="px-5 py-3 rounded-xl bg-zinc-900 text-white text-sm hover:bg-zinc-800" href="mailto:you@example.com">
+              Email to order
+            </a>
+            <a class="px-5 py-3 rounded-xl border border-zinc-300 text-sm hover:bg-white" href="#">
+              Instagram DM
+            </a>
+            <a class="px-5 py-3 rounded-xl border border-zinc-300 text-sm hover:bg-white" href="#">
+              Etsy / Store link
+            </a>
           </div>
-          <div class="asideCard">
-            <h3>Links</h3>
-            <div class="asideLinks">
-              <a href="shop.html">Shop</a>
-              <a href="ingredients.html">Ingredients</a>
-              <a href="faq.html">FAQ</a>
-              <a href="index.html">Home</a>
-            </div>
+
+          <div class="mt-8 rounded-2xl border border-zinc-200 bg-white p-5">
+            <p class="text-sm font-medium">Suggested order message</p>
+            <p class="mt-2 text-sm text-zinc-600">
+              “Hi! I’d like: [Product], quantity [#], shipping to [City/ZIP].”
+            </p>
           </div>
-        </aside>
+        </div>
+
+        <div class="rounded-3xl border border-zinc-200 p-8">
+          <h2 class="text-xl font-semibold">Info</h2>
+          <dl class="mt-6 space-y-4 text-sm">
+            <div class="flex justify-between gap-6">
+              <dt class="text-zinc-600">Email</dt>
+              <dd class="font-medium"><a class="hover:underline" href="mailto:you@example.com">you@example.com</a></dd>
+            </div>
+            <div class="flex justify-between gap-6">
+              <dt class="text-zinc-600">Instagram</dt>
+              <dd class="font-medium"><a class="hover:underline" href="#">@yourhandle</a></dd>
+            </div>
+            <div class="flex justify-between gap-6">
+              <dt class="text-zinc-600">Location</dt>
+              <dd class="font-medium">City, State</dd>
+            </div>
+            <div class="flex justify-between gap-6">
+              <dt class="text-zinc-600">Typical ship time</dt>
+              <dd class="font-medium">1–3 business days</dd>
+            </div>
+          </dl>
+
+          <div class="mt-10 rounded-2xl border border-zinc-200 p-6 bg-zinc-50">
+            <h3 class="font-medium">Prefer a form?</h3>
+            <p class="mt-2 text-sm text-zinc-600">
+              If you want, I can add a simple form that opens the user’s email client (mailto),
+              or a real form using Netlify Forms / Formspree.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
-
-    <footer class="footer">
-      <div class="container foot">
-        <div><div class="brand small"><span class="mark" aria-hidden="true"></span><span class="brandName">Heartland Soapworks</span></div><p class="muted">Handcrafted soap with Midwest warmth.</p></div>
-        <div class="footRight"><a href="shop.html">Shop</a><a href="faq.html">FAQ</a></div>
-      </div>
-    </footer>
   </main>
 
-  <div class="modal" id="cmdk" role="dialog" aria-modal="true" aria-labelledby="cmdkTitle" hidden>
-    <div class="modalBackdrop" data-close="1"></div>
-    <div class="modalCard" role="document">
-      <div class="modalHead"><div><div class="modalTitle" id="cmdkTitle">Search</div><div class="modalSub muted">Type to filter. Enter to open. Esc to close.</div></div><button class="iconbtn" data-close="1" aria-label="Close">✕</button></div>
-      <input id="cmdkInput" class="cmdkInput" placeholder="shop, about, ingredients…" />
-      <div class="cmdkList" id="cmdkList" role="listbox"></div>
-      <div class="cmdkHint muted"><span class="kbd2">↑</span><span class="kbd2">↓</span><span class="kbd2">Enter</span><span class="kbd2">Esc</span></div>
+  <footer class="border-t border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 py-10 text-sm text-zinc-500 flex flex-wrap gap-4 justify-between">
+      <span>© <span id="y"></span> Your Brand</span>
+      <span>Made with HTML + Tailwind CDN</span>
     </div>
-  </div>
+  </footer>
 
-  <script src="app.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
