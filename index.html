@@ -3,228 +3,191 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
-  <title>Heartland Soapworks — Handcrafted Midwest Soap</title>
-  <meta name="description" content="Heartland Soapworks — handcrafted small-batch soap inspired by the Midwest. Bars $10 each." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <title>Your Brand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body>
-  <div class="bg" aria-hidden="true">
-    <div class="grain"></div>
-    <div class="sunwash"></div>
-    <div class="fieldlines"></div>
-  </div>
-
-  <header class="topbar" id="topbar" data-page="home">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Heartland Soapworks home">
-        <span class="mark" aria-hidden="true"></span>
-        <span class="brandText">
-          <span class="brandName">Heartland Soapworks</span>
-          <span class="brandTag">Small-batch • Midwest-made</span>
-        </span>
-      </a>
-
-      <nav class="links" aria-label="primary">
-        <a href="shop.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="ingredients.html">Ingredients</a>
-        <a href="markets.html">Markets</a>
-        <a href="wholesale.html">Wholesale</a>
-        <a class="pill" href="contact.html">Contact</a>
-      </nav>
-
-      <div class="actions">
-        <button class="iconbtn" id="cmdkBtn" title="Search (Ctrl/⌘ K)" aria-label="Open search">
-          <span class="kbd">⌘K</span>
-        </button>
-        <button class="iconbtn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
-          <span id="themeIcon" aria-hidden="true">☼</span>
-        </button>
-        <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="mobile" id="mobileMenu" hidden>
-      <div class="container mobileInner">
-        <a href="shop.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="ingredients.html">Ingredients</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="markets.html">Markets</a>
-        <a href="wholesale.html">Wholesale</a>
-        <a href="faq.html">FAQ</a>
-        <a class="pill" href="contact.html">Contact</a>
-      </div>
-    </div>
+<body class="bg-white text-zinc-900">
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a class="text-lg font-semibold tracking-tight" href="#">Your Brand</a>
+    <nav class="flex gap-6 text-sm">
+      <a class="hover:underline" href="#products">Products</a>
+      <a class="hover:underline" href="#about">About</a>
+      <a class="hover:underline" href="#faq">FAQ</a>
+      <a class="hover:underline" href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main id="top">
-    <section class="hero container">
-      <div class="heroLeft">
-        <div class="badge reveal">
-          <span class="badgeDot" aria-hidden="true"></span>
-          Handcrafted soap inspired by prairies, rivers, and small-town warmth.
+  <main class="max-w-6xl mx-auto px-6">
+    <section class="py-16 border-t border-zinc-200">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-sm uppercase tracking-widest text-zinc-500">Handmade • Small batch</p>
+          <h1 class="mt-3 text-4xl sm:text-5xl font-semibold leading-tight">
+            Simple, beautiful products that feel good to use.
+          </h1>
+          <p class="mt-5 text-zinc-600 text-lg">
+            Short line about what you sell and what makes it different. Swap this with your real pitch.
+          </p>
+          <div class="mt-8 flex gap-3">
+            <a href="#products" class="px-5 py-3 rounded-xl bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-800">
+              Shop products
+            </a>
+            <a href="#about" class="px-5 py-3 rounded-xl border border-zinc-300 text-sm font-medium hover:bg-zinc-50">
+              Learn more
+            </a>
+          </div>
+          <p class="mt-6 text-xs text-zinc-500">No checkout yet? Link buttons to Etsy/Shopify later.</p>
         </div>
-
-        <h1 class="reveal">
-          Clean ingredients.<br />
-          <span class="grad">Heartland comfort.</span>
-        </h1>
-
-        <p class="lead reveal">
-          Heartland Soapworks makes small-batch bars with a simple goal: a great lather, a gentle feel,
-          and scents that belong at home.
-        </p>
-
-        <div class="cta reveal">
-          <a class="btn primary" href="shop.html">Shop $10 bars</a>
-          <a class="btn ghost" href="about.html">Read our story</a>
-        </div>
-
-        <div class="pillRow reveal" aria-label="Highlights">
-          <span class="pill2">$10 per bar</span>
-          <span class="pill2">Small-batch</span>
-          <span class="pill2">Gift-ready</span>
-          <span class="pill2">Made with care</span>
+        <div class="rounded-3xl border border-zinc-200 bg-zinc-50 p-6">
+          <div class="aspect-[4/3] rounded-2xl bg-white border border-zinc-200 grid place-items-center">
+            <span class="text-zinc-400 text-sm">Hero image placeholder</span>
+          </div>
+          <div class="mt-6 grid grid-cols-3 gap-3">
+            <div class="aspect-square rounded-xl bg-white border border-zinc-200 grid place-items-center text-xs text-zinc-400">Img</div>
+            <div class="aspect-square rounded-xl bg-white border border-zinc-200 grid place-items-center text-xs text-zinc-400">Img</div>
+            <div class="aspect-square rounded-xl bg-white border border-zinc-200 grid place-items-center text-xs text-zinc-400">Img</div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="heroRight reveal">
-        <div class="featurePanel">
-          <div class="panelTop">
-            <div class="stamp" aria-hidden="true">HS</div>
+    <section id="products" class="py-16 border-t border-zinc-200">
+      <div class="flex items-end justify-between gap-6">
+        <h2 class="text-2xl font-semibold">Featured products</h2>
+        <a class="text-sm text-zinc-600 hover:underline" href="#">View all</a>
+      </div>
+
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card -->
+        <article class="rounded-2xl border border-zinc-200 p-5 hover:shadow-sm transition">
+          <div class="aspect-[4/3] rounded-xl bg-zinc-50 border border-zinc-200 grid place-items-center text-sm text-zinc-400">
+            Product image
+          </div>
+          <div class="mt-4 flex items-start justify-between gap-4">
             <div>
-              <div class="panelTitle">Seasonal Favorites</div>
-              <div class="muted">Tap a bar to preview</div>
+              <h3 class="font-medium">Product Name</h3>
+              <p class="text-sm text-zinc-600">One-line description.</p>
             </div>
+            <div class="text-sm font-medium">$12</div>
           </div>
+          <div class="mt-4 flex gap-3">
+            <a class="flex-1 text-center px-4 py-2 rounded-xl bg-zinc-900 text-white text-sm hover:bg-zinc-800" href="#contact">
+              Buy
+            </a>
+            <a class="px-4 py-2 rounded-xl border border-zinc-300 text-sm hover:bg-zinc-50" href="#about">
+              Details
+            </a>
+          </div>
+        </article>
 
-          <div class="preview" id="preview">
-            <img id="previewImg" src="assets/soap-oatmilk-honey.jpg" alt="Featured soap preview">
-            <div class="previewInfo">
-              <div class="previewName" id="previewName">Oat Milk &amp; Honey</div>
-              <div class="previewMeta">
-                <span class="priceTag">$10</span>
-                <span class="muted" id="previewNote">Warm • Cozy • Clean</span>
-              </div>
+        <!-- Duplicate cards -->
+        <article class="rounded-2xl border border-zinc-200 p-5 hover:shadow-sm transition">
+          <div class="aspect-[4/3] rounded-xl bg-zinc-50 border border-zinc-200 grid place-items-center text-sm text-zinc-400">
+            Product image
+          </div>
+          <div class="mt-4 flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-medium">Product Name</h3>
+              <p class="text-sm text-zinc-600">One-line description.</p>
             </div>
+            <div class="text-sm font-medium">$12</div>
           </div>
+          <div class="mt-4 flex gap-3">
+            <a class="flex-1 text-center px-4 py-2 rounded-xl bg-zinc-900 text-white text-sm hover:bg-zinc-800" href="#contact">Buy</a>
+            <a class="px-4 py-2 rounded-xl border border-zinc-300 text-sm hover:bg-zinc-50" href="#about">Details</a>
+          </div>
+        </article>
 
-          <div class="thumbs" id="thumbs" aria-label="Soap thumbnails">
-            <button class="thumb active" data-name="Oat Milk &amp; Honey" data-note="Warm • Cozy • Clean" data-src="assets/soap-oatmilk-honey.jpg" aria-label="Oat Milk & Honey">
-              <img src="assets/soap-oatmilk-honey.jpg" alt="">
-            </button>
-            <button class="thumb" data-name="Fresh Falls" data-note="Crisp • Bright • Everyday" data-src="assets/soap-fresh-falls.jpg" aria-label="Fresh Falls">
-              <img src="assets/soap-fresh-falls.jpg" alt="">
-            </button>
-            <button class="thumb" data-name="Bourbon Wood" data-note="Smoky • Smooth • Cabin" data-src="assets/soap-bourbon-wood.jpg" aria-label="Bourbon Wood">
-              <img src="assets/soap-bourbon-wood.jpg" alt="">
-            </button>
-            <button class="thumb" data-name="Alpine Rapids" data-note="Cool • Clean • River air" data-src="assets/soap-alpine-rapids.jpg" aria-label="Alpine Rapids">
-              <img src="assets/soap-alpine-rapids.jpg" alt="">
-            </button>
+        <article class="rounded-2xl border border-zinc-200 p-5 hover:shadow-sm transition">
+          <div class="aspect-[4/3] rounded-xl bg-zinc-50 border border-zinc-200 grid place-items-center text-sm text-zinc-400">
+            Product image
+          </div>
+          <div class="mt-4 flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-medium">Product Name</h3>
+              <p class="text-sm text-zinc-600">One-line description.</p>
+            </div>
+            <div class="text-sm font-medium">$12</div>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a class="flex-1 text-center px-4 py-2 rounded-xl bg-zinc-900 text-white text-sm hover:bg-zinc-800" href="#contact">Buy</a>
+            <a class="px-4 py-2 rounded-xl border border-zinc-300 text-sm hover:bg-zinc-50" href="#about">Details</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="py-16 border-t border-zinc-200">
+      <div class="grid lg:grid-cols-3 gap-10">
+        <div class="lg:col-span-1">
+          <h2 class="text-2xl font-semibold">About</h2>
+          <p class="mt-3 text-zinc-600">
+            Two or three sentences about you, your process, materials, and what you care about.
+          </p>
+        </div>
+        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-zinc-200 p-6">
+            <h3 class="font-medium">Small batch</h3>
+            <p class="mt-2 text-sm text-zinc-600">Quality control and consistency.</p>
+          </div>
+          <div class="rounded-2xl border border-zinc-200 p-6">
+            <h3 class="font-medium">Thoughtful ingredients</h3>
+            <p class="mt-2 text-sm text-zinc-600">Explain what you do and don’t use.</p>
+          </div>
+          <div class="rounded-2xl border border-zinc-200 p-6">
+            <h3 class="font-medium">Fast shipping</h3>
+            <p class="mt-2 text-sm text-zinc-600">Set expectations clearly.</p>
+          </div>
+          <div class="rounded-2xl border border-zinc-200 p-6">
+            <h3 class="font-medium">Gift-ready</h3>
+            <p class="mt-2 text-sm text-zinc-600">Packaging + presentation.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section container">
-      <div class="sectionHead reveal">
-        <div>
-          <h2>Popular bars</h2>
-          <p>A quick peek. See the full catalog on the Shop page.</p>
-        </div>
-        <a class="btn ghost" href="shop.html">Browse all →</a>
-      </div>
-
-      <div class="products">
-        <a class="productCard reveal tilt" href="product.html?id=oatmilk-honey">
-          <div class="imgWrap">
-            <img src="assets/soap-oatmilk-honey.jpg" alt="Oat Milk & Honey soap bar">
-            <span class="pricePill">$10</span>
-          </div>
-          <h3>Oat Milk &amp; Honey</h3>
-          <p>Soft and comforting — warm, clean, and cozy.</p>
-          <div class="tags"><span class="tag">Comfort</span><span class="tag">Giftable</span></div>
-        </a>
-
-        <a class="productCard reveal tilt" href="product.html?id=fresh-falls">
-          <div class="imgWrap">
-            <img src="assets/soap-fresh-falls.jpg" alt="Fresh Falls soap bar">
-            <span class="pricePill">$10</span>
-          </div>
-          <h3>Fresh Falls</h3>
-          <p>Bright and crisp — like river air after rain.</p>
-          <div class="tags"><span class="tag">Fresh</span><span class="tag">Everyday</span></div>
-        </a>
-
-        <a class="productCard reveal tilt" href="product.html?id=bourbon-wood">
-          <div class="imgWrap">
-            <img src="assets/soap-bourbon-wood.jpg" alt="Bourbon Wood soap bar">
-            <span class="pricePill">$10</span>
-          </div>
-          <h3>Bourbon Wood</h3>
-          <p>Warm woods with a smooth finish — cabin vibes.</p>
-          <div class="tags"><span class="tag">Woodsy</span><span class="tag">Bold</span></div>
-        </a>
-      </div>
-
-      <div class="callout reveal" style="margin-top:18px">
-        <div>
-          <h3>Want gift sets or wedding favors?</h3>
-          <p class="muted">We can bundle bars, add notes, and do small custom runs.</p>
-        </div>
-        <a class="btn primary" href="contact.html">Contact us</a>
+    <section id="faq" class="py-16 border-t border-zinc-200">
+      <h2 class="text-2xl font-semibold">FAQ</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <details class="rounded-2xl border border-zinc-200 p-5">
+          <summary class="cursor-pointer font-medium">What’s your return policy?</summary>
+          <p class="mt-2 text-sm text-zinc-600">Answer here.</p>
+        </details>
+        <details class="rounded-2xl border border-zinc-200 p-5">
+          <summary class="cursor-pointer font-medium">How long does shipping take?</summary>
+          <p class="mt-2 text-sm text-zinc-600">Answer here.</p>
+        </details>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container foot">
-        <div>
-          <div class="brand small">
-            <span class="mark" aria-hidden="true"></span>
-            <span class="brandName">Heartland Soapworks</span>
-          </div>
-          <p class="muted">Handcrafted soap with Midwest warmth.</p>
-        </div>
-        <div class="footRight">
-          <a href="shop.html">Shop</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
+    <section id="contact" class="py-16 border-t border-zinc-200 mb-16">
+      <div class="rounded-3xl border border-zinc-200 p-8 bg-zinc-50">
+        <h2 class="text-2xl font-semibold">Contact / Buy</h2>
+        <p class="mt-2 text-zinc-600">Put your email, Instagram, or “buy” links here.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="px-5 py-3 rounded-xl bg-zinc-900 text-white text-sm hover:bg-zinc-800" href="mailto:you@example.com">
+            Email me
+          </a>
+          <a class="px-5 py-3 rounded-xl border border-zinc-300 text-sm hover:bg-white" href="#">
+            Instagram
+          </a>
+          <a class="px-5 py-3 rounded-xl border border-zinc-300 text-sm hover:bg-white" href="#">
+            Etsy / Store link
+          </a>
         </div>
       </div>
-    </footer>
+    </section>
   </main>
 
-  <!-- Cmd-K modal -->
-  <div class="modal" id="cmdk" role="dialog" aria-modal="true" aria-labelledby="cmdkTitle" hidden>
-    <div class="modalBackdrop" data-close="1"></div>
-    <div class="modalCard" role="document">
-      <div class="modalHead">
-        <div>
-          <div class="modalTitle" id="cmdkTitle">Search</div>
-          <div class="modalSub muted">Type to filter. Enter to open. Esc to close.</div>
-        </div>
-        <button class="iconbtn" data-close="1" aria-label="Close search">✕</button>
-      </div>
-      <input id="cmdkInput" class="cmdkInput" placeholder="shop, about, ingredients, markets…" />
-      <div class="cmdkList" id="cmdkList" role="listbox" aria-label="Search results"></div>
-      <div class="cmdkHint muted">
-        <span class="kbd2">↑</span><span class="kbd2">↓</span> <span class="muted">navigate</span>
-        <span class="kbd2">Enter</span> <span class="muted">open</span>
-        <span class="kbd2">Esc</span> <span class="muted">close</span>
-      </div>
+  <footer class="border-t border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 py-10 text-sm text-zinc-500 flex flex-wrap gap-4 justify-between">
+      <span>© <span id="y"></span> Your Brand</span>
+      <span>Made with HTML + Tailwind CDN</span>
     </div>
-  </div>
+  </footer>
 
-  <script src="app.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
