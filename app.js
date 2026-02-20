@@ -1,17 +1,15 @@
-// Heartland Soapworks — fancy behavior, warm vibe.
+// Heartland Soapworks — multi-page JS (default LIGHT mode)
 
 const $ = (q, el = document) => el.querySelector(q);
 const $$ = (q, el = document) => Array.from(el.querySelectorAll(q));
 
 /* ---------------------------
-   Theme (default: light)
+   Theme (DEFAULT LIGHT)
+   - If user has never chosen, force "light"
 ---------------------------- */
 (function initTheme(){
   const stored = localStorage.getItem("hs_theme");
-  const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-
-  // Midwest vibe default: light. If user has system dark and no stored pref, use dark.
-  const theme = stored ?? (prefersDark ? "dark" : "light");
+  const theme = stored ?? "light";
   setTheme(theme);
 })();
 
@@ -76,7 +74,7 @@ reveals.forEach((el, i) => {
 });
 
 /* ---------------------------
-   Tilt cards (subtle)
+   Tilt (subtle)
 ---------------------------- */
 function tiltHandler(el){
   const rect = () => el.getBoundingClientRect();
@@ -95,7 +93,7 @@ function tiltHandler(el){
 $$(".tilt").forEach(tiltHandler);
 
 /* ---------------------------
-   Hero preview thumbnails (index only)
+   Home hero preview thumbnails
 ---------------------------- */
 const thumbs = $("#thumbs");
 const previewImg = $("#previewImg");
@@ -119,25 +117,84 @@ thumbs?.addEventListener("click", (e) => {
 });
 
 /* ---------------------------
-   Toast utility
+   Product page routing
 ---------------------------- */
-const toast = $("#toast");
-let toastTimer = null;
+const PRODUCTS = {
+  "oatmilk-honey": {
+    name: "Oat Milk & Honey",
+    img: "assets/soap-oatmilk-honey.jpg",
+    desc: "Soft and comforting — warm, clean, and cozy.",
+    mood: "Warm • Cozy • Clean",
+    notes: "A familiar, comforting bar you’ll reach for daily.",
+    goodFor: ["Gifting", "Everyday", "Guest bath"],
+  },
+  "fresh-falls": {
+    name: "Fresh Falls",
+    img: "assets/soap-fresh-falls.jpg",
+    desc: "Bright and crisp — everyday clean.",
+    mood: "Crisp • Bright • Everyday",
+    notes: "Clean and uplifting. Like river air after rain.",
+    goodFor: ["Everyday", "Morning", "Fresh scent lovers"],
+  },
+  "bourbon-wood": {
+    name: "Bourbon Wood",
+    img: "assets/soap-bourbon-wood.jpg",
+    desc: "Warm woods with a smooth finish — cabin vibes.",
+    mood: "Smoky • Smooth • Cabin",
+    notes: "Warm woods with a steady, comforting finish.",
+    goodFor: ["Gifting", "Bold scents", "Hands-on jobs"],
+  },
+  "alpine-rapids": {
+    name: "Alpine Rapids",
+    img: "assets/soap-alpine-rapids.jpg",
+    desc: "Cool and clean with a bright finish.",
+    mood: "Cool • Clean • River air",
+    notes: "Crisp and clean—fresh without being sharp.",
+    goodFor: ["Post-workout", "Everyday", "Clean scent lovers"],
+  },
+  "citrus-grove": {
+    name: "Citrus Grove",
+    img: "assets/soap-citrus-grove.jpg",
+    desc: "Sunny citrus — bright, not sharp.",
+    mood: "Sunny • Bright • Smooth",
+    notes: "A bright bar that stays smooth and easy.",
+    goodFor: ["Morning", "Gifting", "Fresh scent lovers"],
+  },
+  "lavender-field": {
+    name: "Lavender Field",
+    img: "assets/soap-lavender-field.jpg",
+    desc: "Calm and gentle — perfect before bed.",
+    mood: "Calm • Gentle • Classic",
+    notes: "A calming bar that feels like the end of a long day.",
+    goodFor: ["Night routine", "Relaxation", "Classic scents"],
+  },
+};
 
-function showToast(msg){
-  if (!toast) return;
-  toast.hidden = false;
-  toast.textContent = msg;
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { toast.hidden = true; }, 1600);
-}
+(function hydrateProductPage(){
+  const nameEl = $("#pName");
+  if (!nameEl) return; // not on product page
 
-$$("[data-toast]").forEach(btn => {
-  btn.addEventListener("click", () => showToast(btn.dataset.toast));
-});
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id") || "oatmilk-honey";
+  const p = PRODUCTS[id] ?? PRODUCTS["oatmilk-honey"];
+
+  $("#pName").textContent = p.name;
+  $("#pDesc").textContent = p.desc;
+  const img = $("#pImg");
+  if (img) { img.src = p.img; img.alt = `${p.name} soap photo`; }
+  $("#pMood") && ($("#pMood").textContent = p.mood);
+  $("#pNotes") && ($("#pNotes").textContent = p.notes);
+
+  const goodFor = $("#pGoodFor");
+  if (goodFor){
+    goodFor.innerHTML = p.goodFor.map(x => `<span class="chip">${x}</span>`).join("");
+  }
+
+  document.title = `${p.name} — Heartland Soapworks`;
+})();
 
 /* ---------------------------
-   Contact form demo (index only)
+   Contact form demo (if present)
 ---------------------------- */
 const form = $("#contactForm");
 const fake = $("#fakeSubmit");
@@ -152,61 +209,37 @@ function flashNote(msg){
 form?.addEventListener("submit", (e) => {
   e.preventDefault();
   flashNote("This is UI-only on GitHub Pages. Hook it to a form service when ready.");
-  showToast("Message queued (demo).");
 });
-
-fake?.addEventListener("click", () => {
-  flashNote("Demo: pretend message sent.");
-  showToast("Sent ✨ (demo)");
-});
+fake?.addEventListener("click", () => flashNote("Demo: pretend message sent."));
 
 /* ---------------------------
-   Cmd-K search modal (works on both pages)
+   Cmd-K search (multi-page)
 ---------------------------- */
 const cmdk = $("#cmdk");
 const cmdkBtn = $("#cmdkBtn");
 const cmdkInput = $("#cmdkInput");
 const cmdkList = $("#cmdkList");
 
-function pageTargets(){
-  // Detect what sections exist on the current page
-  const t = [];
-  const add = (id, label, hint, hrefOverride=null) => {
-    const el = document.getElementById(id);
-    if (el) t.push({ id, label, hint, href: hrefOverride ?? `#${id}` });
-  };
+const NAV = [
+  { label:"Home", href:"index.html", hint:"Landing page" },
+  { label:"Shop", href:"shop.html", hint:"All $10 bars" },
+  { label:"Gallery", href:"gallery.html", hint:"Photos" },
+  { label:"About", href:"about.html", hint:"Our story" },
+  { label:"Ingredients", href:"ingredients.html", hint:"Ingredient philosophy" },
+  { label:"Markets", href:"markets.html", hint:"Find us in person" },
+  { label:"Wholesale", href:"wholesale.html", hint:"Shops & events" },
+  { label:"FAQ", href:"faq.html", hint:"Common questions" },
+  { label:"Contact", href:"contact.html", hint:"Send a message" },
+];
 
-  // common
-  t.push({ id:"home", label:"Home", hint:"Return home", href:"index.html" });
-
-  // index sections
-  add("shop", "Shop", "Browse soaps ($10)", "#shop");
-  add("story", "Our Story", "Midwest-made", "#story");
-  add("markets", "Markets", "Find us in person", "#markets");
-  add("contact", "Contact", "Ask a question", "#contact");
-
-  // about page sections (no ids besides page structure; offer anchors via href)
-  if (location.pathname.endsWith("about.html") || document.querySelector(".aboutPage")){
-    t.push({ id:"about", label:"About", hint:"This page", href:"about.html" });
-    t.push({ id:"shop", label:"Shop", hint:"Go to products", href:"index.html#shop" });
-    t.push({ id:"contact", label:"Contact", hint:"Send a message", href:"index.html#contact" });
-  } else {
-    t.push({ id:"about", label:"About", hint:"Learn about Heartland", href:"about.html" });
-  }
-
-  return t;
-}
-
-let targets = pageTargets();
 let selected = 0;
-let filtered = targets;
+let filtered = NAV;
 
 function openCmdk(){
   if (!cmdk) return;
   cmdk.hidden = false;
-  targets = pageTargets();
-  filtered = targets;
   selected = 0;
+  filtered = NAV;
   renderCmdk();
   setTimeout(() => cmdkInput?.focus(), 0);
 }
@@ -253,14 +286,6 @@ function jumpTo(i){
   const t = filtered[i];
   if (!t) return;
   closeCmdk();
-
-  // Same-page anchor navigation if href starts with #
-  if (t.href?.startsWith("#")){
-    document.querySelector(t.href)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    return;
-  }
-
-  // Otherwise navigate
   window.location.href = t.href;
 }
 
@@ -300,8 +325,8 @@ cmdk?.addEventListener("click", (e) => {
 
 cmdkInput?.addEventListener("input", () => {
   const q = cmdkInput.value.trim();
-  filtered = targets
-    .map(t => ({ ...t, _score: Math.max(scoreMatch(q, t.label), scoreMatch(q, t.id), scoreMatch(q, t.hint)) }))
+  filtered = NAV
+    .map(t => ({ ...t, _score: Math.max(scoreMatch(q, t.label), scoreMatch(q, t.href), scoreMatch(q, t.hint)) }))
     .filter(t => q === "" ? true : t._score > -Infinity)
     .sort((a,b) => (b._score - a._score));
   selected = 0;

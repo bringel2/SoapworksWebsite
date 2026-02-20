@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <title>About — Heartland Soapworks</title>
-  <meta name="description" content="Learn about Heartland Soapworks — a Midwest-inspired small-batch soap company." />
+  <title>Product — Heartland Soapworks</title>
+  <meta name="description" content="Heartland Soapworks product details. $10 bars." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
 <body>
   <div class="bg" aria-hidden="true"><div class="grain"></div><div class="sunwash"></div><div class="fieldlines"></div></div>
 
-  <header class="topbar" id="topbar" data-page="about">
+  <header class="topbar" id="topbar" data-page="product">
     <div class="container nav">
       <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="brandText"><span class="brandName">Heartland Soapworks</span><span class="brandTag">Small-batch • Midwest-made</span></span></a>
       <nav class="links" aria-label="primary">
         <a href="shop.html">Shop</a>
-        <a class="active" href="about.html">About</a>
+        <a href="about.html">About</a>
         <a href="ingredients.html">Ingredients</a>
         <a href="markets.html">Markets</a>
         <a href="wholesale.html">Wholesale</a>
@@ -40,57 +40,56 @@
 
   <main class="container page">
     <section class="pageHero">
-      <div class="badge reveal"><span class="badgeDot" aria-hidden="true"></span>About Heartland Soapworks</div>
-      <h1 class="reveal">A small studio with <span class="grad">big heartland energy.</span></h1>
-      <p class="lead reveal">
-        We make soap that feels honest and familiar: clean scents, warm comfort, and that “fresh air after the rain” feeling.
-      </p>
-      <div class="cta reveal">
-        <a class="btn primary" href="shop.html">Shop $10 bars</a>
-        <a class="btn ghost" href="gallery.html">See photos</a>
-      </div>
+      <a class="btn ghost reveal" href="shop.html">← Back to Shop</a>
+      <h1 class="reveal" id="pName">Soap</h1>
+      <p class="lead reveal" id="pDesc">Small-batch bar soap with Midwest warmth.</p>
     </section>
 
-    <section class="section" style="padding-top:24px">
-      <div class="aboutGrid2">
-        <div class="aboutCard reveal">
-          <h2>What we make</h2>
-          <p class="muted">
-            Small-batch bar soap with a focus on a great lather and a gentle, clean feel.
-            Our scent style is “Midwest clean”: warm woods, fresh water, bright mornings, cozy evenings.
-          </p>
-          <div class="chips">
-            <span class="chip">Small-batch</span><span class="chip">Handcrafted</span><span class="chip">Gift-ready</span><span class="chip">$10 / bar</span>
-          </div>
+    <section class="section" style="padding-top:20px">
+      <div class="productDetail reveal">
+        <div class="productMedia">
+          <img id="pImg" src="assets/soap-oatmilk-honey.jpg" alt="Soap photo">
         </div>
 
-        <div class="aboutCard reveal">
-          <h2>Why “Heartland”</h2>
-          <p class="muted">
-            Heartland means grounded and dependable. The kind of soap you’d be proud to keep by the sink,
-            set out for guests, or pack for a weekend away.
-          </p>
-          <div class="miniFacts">
-            <div><span class="muted">Inspired by</span><span>Prairies &amp; rivers</span></div>
-            <div><span class="muted">Style</span><span>Clean, warm, familiar</span></div>
-            <div><span class="muted">Packaging</span><span>Minimal + giftable</span></div>
+        <div class="productInfo">
+          <div class="priceRow">
+            <span class="priceBig">$10</span>
+            <span class="pill2" id="pMood">Warm • Cozy • Clean</span>
+          </div>
+
+          <div class="infoBlock">
+            <h3>Notes</h3>
+            <p class="muted" id="pNotes">A familiar, comforting bar you’ll reach for daily.</p>
+          </div>
+
+          <div class="infoBlock">
+            <h3>Good for</h3>
+            <div class="chips" id="pGoodFor">
+              <span class="chip">Gifting</span><span class="chip">Everyday</span><span class="chip">Guest bath</span>
+            </div>
+          </div>
+
+          <div class="infoBlock">
+            <h3>Ingredients</h3>
+            <p class="muted">See our ingredient philosophy and allergen notes.</p>
+            <a class="btn primary" href="ingredients.html">Ingredients page</a>
+          </div>
+
+          <div class="callout" style="margin-top:14px">
+            <div>
+              <h3>Order this bar</h3>
+              <p class="muted">GitHub Pages can’t process payments—link this to Etsy/Shopify/Square later.</p>
+            </div>
+            <a class="btn primary" href="contact.html">Ask to buy</a>
           </div>
         </div>
-      </div>
-
-      <div class="callout reveal" style="margin-top:18px">
-        <div>
-          <h3>Want wholesale or custom bundles?</h3>
-          <p class="muted">We love working with local shops, gyms, salons, and event planners.</p>
-        </div>
-        <a class="btn primary" href="wholesale.html">Wholesale</a>
       </div>
     </section>
 
     <footer class="footer">
       <div class="container foot">
         <div><div class="brand small"><span class="mark" aria-hidden="true"></span><span class="brandName">Heartland Soapworks</span></div><p class="muted">Handcrafted soap with Midwest warmth.</p></div>
-        <div class="footRight"><a href="shop.html">Shop</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+        <div class="footRight"><a href="shop.html">Shop</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div>
       </div>
     </footer>
   </main>
@@ -99,7 +98,7 @@
     <div class="modalBackdrop" data-close="1"></div>
     <div class="modalCard" role="document">
       <div class="modalHead"><div><div class="modalTitle" id="cmdkTitle">Search</div><div class="modalSub muted">Type to filter. Enter to open. Esc to close.</div></div><button class="iconbtn" data-close="1" aria-label="Close">✕</button></div>
-      <input id="cmdkInput" class="cmdkInput" placeholder="shop, ingredients, markets…" />
+      <input id="cmdkInput" class="cmdkInput" placeholder="shop, about, ingredients…" />
       <div class="cmdkList" id="cmdkList" role="listbox"></div>
       <div class="cmdkHint muted"><span class="kbd2">↑</span><span class="kbd2">↓</span><span class="kbd2">Enter</span><span class="kbd2">Esc</span></div>
     </div>

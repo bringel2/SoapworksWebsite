@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Shop — Heartland Soapworks</title>
+  <meta name="description" content="Shop Heartland Soapworks. All bars $10." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><div class="grain"></div><div class="sunwash"></div><div class="fieldlines"></div></div>
+
+  <header class="topbar" id="topbar" data-page="shop">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="brandText"><span class="brandName">Heartland Soapworks</span><span class="brandTag">Small-batch • Midwest-made</span></span></a>
+      <nav class="links" aria-label="primary">
+        <a class="active" href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="ingredients.html">Ingredients</a>
+        <a href="markets.html">Markets</a>
+        <a href="wholesale.html">Wholesale</a>
+        <a class="pill" href="contact.html">Contact</a>
+      </nav>
+      <div class="actions">
+        <button class="iconbtn" id="cmdkBtn" aria-label="Open search"><span class="kbd">⌘K</span></button>
+        <button class="iconbtn" id="themeBtn" aria-label="Toggle theme"><span id="themeIcon" aria-hidden="true">☼</span></button>
+        <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="container mobileInner">
+        <a href="shop.html">Shop</a><a href="about.html">About</a><a href="ingredients.html">Ingredients</a><a href="gallery.html">Gallery</a><a href="markets.html">Markets</a><a href="wholesale.html">Wholesale</a><a href="faq.html">FAQ</a><a class="pill" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="pageHero">
+      <div class="badge reveal"><span class="badgeDot" aria-hidden="true"></span>All bars are $10 • Small-batch • Gift-ready</div>
+      <h1 class="reveal">Shop</h1>
+      <p class="lead reveal">Browse the full catalog. Click a bar for details.</p>
+    </section>
+
+    <section class="section" style="padding-top:26px">
+      <div class="products">
+        <a class="productCard reveal tilt" href="product.html?id=oatmilk-honey">
+          <div class="imgWrap"><img src="assets/soap-oatmilk-honey.jpg" alt="Oat Milk & Honey"><span class="pricePill">$10</span></div>
+          <h3>Oat Milk &amp; Honey</h3><p>Warm, cozy, and clean.</p>
+          <div class="tags"><span class="tag">Comfort</span><span class="tag">Creamy lather</span></div>
+        </a>
+
+        <a class="productCard reveal tilt" href="product.html?id=fresh-falls">
+          <div class="imgWrap"><img src="assets/soap-fresh-falls.jpg" alt="Fresh Falls"><span class="pricePill">$10</span></div>
+          <h3>Fresh Falls</h3><p>Crisp and bright — everyday clean.</p>
+          <div class="tags"><span class="tag">Fresh</span><span class="tag">Everyday</span></div>
+        </a>
+
+        <a class="productCard reveal tilt" href="product.html?id=bourbon-wood">
+          <div class="imgWrap"><img src="assets/soap-bourbon-wood.jpg" alt="Bourbon Wood"><span class="pricePill">$10</span></div>
+          <h3>Bourbon Wood</h3><p>Warm woods, smooth finish.</p>
+          <div class="tags"><span class="tag">Woodsy</span><span class="tag">Bold</span></div>
+        </a>
+
+        <a class="productCard reveal tilt" href="product.html?id=alpine-rapids">
+          <div class="imgWrap"><img src="assets/soap-alpine-rapids.jpg" alt="Alpine Rapids"><span class="pricePill">$10</span></div>
+          <h3>Alpine Rapids</h3><p>Cool and clean with a bright finish.</p>
+          <div class="tags"><span class="tag">Crisp</span><span class="tag">Clean</span></div>
+        </a>
+
+        <a class="productCard reveal tilt" href="product.html?id=citrus-grove">
+          <div class="imgWrap"><img src="assets/soap-citrus-grove.jpg" alt="Citrus Grove"><span class="pricePill">$10</span></div>
+          <h3>Citrus Grove</h3><p>Sunny citrus — bright, not sharp.</p>
+          <div class="tags"><span class="tag">Bright</span><span class="tag">Morning</span></div>
+        </a>
+
+        <a class="productCard reveal tilt" href="product.html?id=lavender-field">
+          <div class="imgWrap"><img src="assets/soap-lavender-field.jpg" alt="Lavender Field"><span class="pricePill">$10</span></div>
+          <h3>Lavender Field</h3><p>Calm and gentle — perfect before bed.</p>
+          <div class="tags"><span class="tag">Calm</span><span class="tag">Classic</span></div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container foot">
+        <div><div class="brand small"><span class="mark" aria-hidden="true"></span><span class="brandName">Heartland Soapworks</span></div><p class="muted">Handcrafted soap with Midwest warmth.</p></div>
+        <div class="footRight"><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="modal" id="cmdk" role="dialog" aria-modal="true" aria-labelledby="cmdkTitle" hidden>
+    <div class="modalBackdrop" data-close="1"></div>
+    <div class="modalCard" role="document">
+      <div class="modalHead"><div><div class="modalTitle" id="cmdkTitle">Search</div><div class="modalSub muted">Type to filter. Enter to open. Esc to close.</div></div><button class="iconbtn" data-close="1" aria-label="Close">✕</button></div>
+      <input id="cmdkInput" class="cmdkInput" placeholder="shop, about, ingredients…" />
+      <div class="cmdkList" id="cmdkList" role="listbox"></div>
+      <div class="cmdkHint muted"><span class="kbd2">↑</span><span class="kbd2">↓</span><span class="kbd2">Enter</span><span class="kbd2">Esc</span></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
