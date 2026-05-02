@@ -228,7 +228,6 @@ const NAV = [
   { label:"Ingredients", href:"ingredients.html", hint:"Ingredient philosophy" },
   { label:"Markets", href:"markets.html", hint:"Find us in person" },
   { label:"Wholesale", href:"wholesale.html", hint:"Shops & events" },
-  { label:"FAQ", href:"faq.html", hint:"Common questions" },
   { label:"Contact", href:"contact.html", hint:"Send a message" },
 ];
 
