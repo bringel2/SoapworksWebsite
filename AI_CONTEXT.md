@@ -58,7 +58,7 @@ Each active HTML page contains a small inline script:
 - Toggles the Tailwind `hidden` class on the mobile menu.
 - Updates `aria-expanded`.
 
-`products.html` also contains a configurable `OUT_OF_STOCK_PRODUCTS` array near the bottom of the page. Add exact visible product names to that array, such as `'Bay Rum'`, to mark matching product cards out of stock. Product names that start with `//` are only comments and do not activate the out-of-stock state. The script normalizes name casing/spacing, replaces the price with an `Out of stock` pill, lightly mutes the card background, and disables the matching Buy button by removing its `href`, setting `aria-disabled="true"`, and changing the button text to `Out of stock`. The current active out-of-stock entries are `Bourbon Wood` and `Citrus Sun`.
+`products.html` also contains a configurable `OUT_OF_STOCK_PRODUCTS` array near the bottom of the page. Add exact visible product names to that array, such as `'Bay Rum'`, to mark matching product cards out of stock. Product names that start with `//` are only comments and do not activate the out-of-stock state. The script normalizes name casing/spacing, replaces the price with an absolutely positioned `Out of stock` pill so product descriptions keep their normal wrapping width, lightly mutes the card background, and disables the matching Buy button by removing its `href`, setting `aria-disabled="true"`, and changing the button text to `Out of stock`. The current active out-of-stock entries are `Bourbon Wood` and `Citrus Sun`.
 
 There is no cart logic, no form submission logic, no checkout, no product detail routing, and no analytics in the active pages.
 

@@ -309,7 +309,8 @@
       const price = infoRow?.querySelector(':scope > .text-sm.font-medium');
 
       if (price) {
-        price.className = 'shrink-0 rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-medium text-zinc-600';
+        infoRow.classList.add('relative');
+        price.className = 'absolute right-0 top-0 rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-medium text-zinc-600';
         price.textContent = 'Out of stock';
       }
 
