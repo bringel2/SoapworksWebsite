@@ -58,7 +58,7 @@ Each active HTML page contains a small inline script:
 - Toggles the Tailwind `hidden` class on the mobile menu.
 - Updates `aria-expanded`.
 
-`products.html` also contains a configurable `OUT_OF_STOCK_PRODUCTS` array near the bottom of the page. Add exact visible product names to that array, such as `'Bay Rum'`, to mark matching product cards out of stock. Product names that start with `//` are only comments and do not activate the out-of-stock state. The script normalizes name casing/spacing, adds an out-of-stock badge beside the price, lightly mutes the card background, and disables the matching Buy button by removing its `href`, setting `aria-disabled="true"`, and changing the button text to `Out of stock`.
+`products.html` also contains a configurable `OUT_OF_STOCK_PRODUCTS` array near the bottom of the page. Add exact visible product names to that array, such as `'Bay Rum'`, to mark matching product cards out of stock. Product names that start with `//` are only comments and do not activate the out-of-stock state. The script normalizes name casing/spacing, replaces the price with an `Out of stock` pill, lightly mutes the card background, and disables the matching Buy button by removing its `href`, setting `aria-disabled="true"`, and changing the button text to `Out of stock`. The current active out-of-stock entries are `Bourbon Wood` and `Citrus Sun`.
 
 There is no cart logic, no form submission logic, no checkout, no product detail routing, and no analytics in the active pages.
 
@@ -100,7 +100,9 @@ Current active product descriptions on `products.html`:
 - Oat Milk & Honey: "Warm oatmeal and sweet milk over honey, vanilla bean, musk, and almond."
 - Prairie Sage: "Crisp cypress, calming lavender, and sage like a warm mountain breeze."
 - Sea Salt Bloom: "Tropical orchid, jasmine, white musk, sea salt, ozone, and soft tonka."
-- Timber: "Fresh pine, smoky notes, and citrus zest for a rugged woodsy bar."
+- Timber: "Fresh pine, smoke, and citrus zest for a rugged woodsy bar."
+
+Product cards on `products.html` do not include the former helper line "Reach out for scent notes and availability."
 
 These descriptions were written from user-provided fragrance source links. `Just Soap` has no fragrance link and is treated as intentionally unscented/simple unless the user says otherwise.
 
